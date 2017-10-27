@@ -39,6 +39,6 @@ public class ProjectileBehavior : MonoBehaviour {
 
     public void primeProjectile()
     {
-
+        primed = true;
     }
 }
