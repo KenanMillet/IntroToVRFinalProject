@@ -30,7 +30,8 @@ public class HandScript : MonoBehaviour {
                 heldObject.GetComponent<Rigidbody>().useGravity = true;
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
                 Vector3 velocity = hand.GetTrackedObjectVelocity();
-                heldObject.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
+                Debug.Log("Velocity of throw is: " + velocity.magnitude);
+                // heldObject.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
                 heldObject = null;
             }
         }
