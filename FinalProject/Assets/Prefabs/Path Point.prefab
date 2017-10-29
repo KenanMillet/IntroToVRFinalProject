@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4009346531456626}
   - component: {fileID: 212024839547832380}
+  - component: {fileID: 114923086720949704}
   m_Layer: 0
   m_Name: Path Point
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &114923086720949704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988479335068778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41856c62a93b6c5449236833f7fa589f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Group: 0
+  Order: 0
 --- !u!212 &212024839547832380
 SpriteRenderer:
   m_ObjectHideFlags: 1
