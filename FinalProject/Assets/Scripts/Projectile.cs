@@ -43,6 +43,10 @@ public class Projectile : MonoBehaviour
     {
         // if it hit's enemy. Take damage.
         // if (primed) { Destroy(this.gameObject); }
+        if(coll.collider.GetComponent<EnemyAI>() != null)
+        {
+            StartCoroutine(Die());
+        }
     }
 
     public void primeProjectile()
@@ -52,6 +56,7 @@ public class Projectile : MonoBehaviour
 
     IEnumerator Die()
     {
+        yield return new WaitForEndOfFrame();
         dying = true;
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
