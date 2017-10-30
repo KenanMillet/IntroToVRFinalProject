@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114790170899442100}
   - component: {fileID: 114764757913639288}
   - component: {fileID: 114171300188586814}
+  - component: {fileID: 114196508720493940}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +111,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a78d989bcaa470b4294d3fb33ab1e594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114196508720493940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100028311356096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e277bde62eb63c94ba07a6473d30cd8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114227523628165814

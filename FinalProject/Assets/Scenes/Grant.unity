@@ -339,22 +339,6 @@ MonoBehaviour:
   heldObject: {fileID: 0}
   highlightBallMat: {fileID: 2100000, guid: 8c8520b39de93614ab0f48d0832f945a, type: 2}
   originMaterial: {fileID: 0}
---- !u!1 &1186615198 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1100028311356096, guid: 9084b8d3b70baec4c9c98830075f3ae9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1805139104}
---- !u!114 &1186615199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1186615198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e277bde62eb63c94ba07a6473d30cd8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1613060943
 Prefab:
   m_ObjectHideFlags: 0
@@ -540,10 +524,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1100028311356096, guid: 9084b8d3b70baec4c9c98830075f3ae9, type: 2}
-      propertyPath: m_TagString
-      value: Projectile
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114196508720493940, guid: 9084b8d3b70baec4c9c98830075f3ae9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9084b8d3b70baec4c9c98830075f3ae9, type: 2}
   m_IsPrefabParent: 0
