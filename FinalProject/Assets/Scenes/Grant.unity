@@ -388,6 +388,16 @@ Prefab:
       propertyPath: highlightBallMat
       value: 
       objectReference: {fileID: 2100000, guid: 8c8520b39de93614ab0f48d0832f945a, type: 2}
+    - target: {fileID: 114978057078729968, guid: 2f85d59e98c0c2a409a02f70f36a025a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751758031776628, guid: 2f85d59e98c0c2a409a02f70f36a025a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f85d59e98c0c2a409a02f70f36a025a, type: 2}
   m_IsPrefabParent: 0
@@ -514,6 +524,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114196508720493940, guid: 9084b8d3b70baec4c9c98830075f3ae9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9084b8d3b70baec4c9c98830075f3ae9, type: 2}
   m_IsPrefabParent: 0
