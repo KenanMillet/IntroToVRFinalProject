@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PathPoint : MonoBehaviour
 {
@@ -7,8 +8,14 @@ public class PathPoint : MonoBehaviour
 		GetComponent<SpriteRenderer>().enabled = false;
 	}
 
+	public class OrderComparator : IComparer<PathPoint>
+	{
+		public int Compare(PathPoint a, PathPoint b)
+		{
+			return a.Order.CompareTo(b.Order);
+		}
+	}
 
-	public bool FinalDestination;
 	public int Group;
 	public int Order;
 }
