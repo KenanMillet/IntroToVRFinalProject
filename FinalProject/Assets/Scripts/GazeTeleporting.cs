@@ -27,17 +27,14 @@ public class GazeTeleporting : MonoBehaviour {
 		// STEP 1: make a Ray object
 		Ray myRay = new Ray( transform.position, transform.forward );
 
-		// STEP 2: declare the distance
-		float myRayDistance = 20f; // only affect stuff 20 meters near us
-
 		// STEP 3: visualize the Raycast
-		Debug.DrawRay( myRay.origin, myRay.direction * myRayDistance, Color.yellow );
+		Debug.DrawRay( myRay.origin, myRay.direction, Color.yellow );
 
 		// STEP 3.5: setup a RaycastHit object, to hold RaycastHit data
 		RaycastHit myRayHit = new RaycastHit(); // this is just an empty container
 
 		// STEP 4: shoot the Raycast
-		if (Physics.Raycast (myRay, out myRayHit, myRayDistance)) {
+		if (Physics.Raycast (myRay, out myRayHit)) {
 			obj = myRayHit.collider.gameObject;
 
 			Debug.Log ("I'm looking at " + myRayHit.collider.name); // the thing the raycast hit
@@ -45,14 +42,14 @@ public class GazeTeleporting : MonoBehaviour {
 			/*SteamVR_Fade.Start (Color.black, 0);
 			SteamVR_Fade.Start (Color.clear, 0.1f);
 */
-			player.transform.position = new Vector3 (myRayHit.transform.position.x, player.transform.position.y, myRayHit.transform.position.z);
+			
 			if (myController.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad)) {
 				//if (myController.GetTouch (SteamVR_Controller.ButtonMask.Touchpad)) {
 				SteamVR_Fade.Start( Color.clear, 0 );
 				SteamVR_Fade.Start( Color.black, teleportFadeTime );
 
-
-			}
+                player.transform.position = new Vector3(myRayHit.transform.position.x, player.transform.position.y, myRayHit.transform.position.z);
+            }
 
 		} 
 		if (obj != null) {

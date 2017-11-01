@@ -262,35 +262,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb15736f042d2e64ab5ac945837b3675, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &230871682 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1168159295003512, guid: 2f85d59e98c0c2a409a02f70f36a025a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1613060943}
---- !u!114 &230871686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 230871682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546c4dc45ed03f9498dcf77561e39235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heldObject: {fileID: 0}
---- !u!135 &230871687
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 230871682}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &239455575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,35 +1154,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 799949895}
---- !u!1 &805684444 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1336025772888626, guid: 2f85d59e98c0c2a409a02f70f36a025a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1613060943}
---- !u!114 &805684449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805684444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546c4dc45ed03f9498dcf77561e39235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heldObject: {fileID: 0}
---- !u!135 &805684450
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805684444}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &819698724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,29 +2272,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114978057078729968, guid: 2f85d59e98c0c2a409a02f70f36a025a,
-        type: 2}
-      propertyPath: highlightBallMat
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c8520b39de93614ab0f48d0832f945a, type: 2}
-    - target: {fileID: 114751758031776628, guid: 2f85d59e98c0c2a409a02f70f36a025a,
-        type: 2}
-      propertyPath: highlightBallMat
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c8520b39de93614ab0f48d0832f945a, type: 2}
-    - target: {fileID: 114978057078729968, guid: 2f85d59e98c0c2a409a02f70f36a025a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114751758031776628, guid: 2f85d59e98c0c2a409a02f70f36a025a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114751758031776628, guid: 2f85d59e98c0c2a409a02f70f36a025a, type: 2}
-    - {fileID: 114978057078729968, guid: 2f85d59e98c0c2a409a02f70f36a025a, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f85d59e98c0c2a409a02f70f36a025a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1630836819
@@ -2655,35 +2575,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1739402179 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1768934850968802, guid: 2f85d59e98c0c2a409a02f70f36a025a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1613060943}
---- !u!114 &1739402183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1739402179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546c4dc45ed03f9498dcf77561e39235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heldObject: {fileID: 0}
---- !u!135 &1739402184
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1739402179}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1805139104
 Prefab:
   m_ObjectHideFlags: 0
