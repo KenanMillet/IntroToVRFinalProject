@@ -66,7 +66,7 @@ public class Projectile : MonoBehaviour
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         GetComponent<Collider>().enabled = false;
         Transform newHitEff = Instantiate(hitEffect, transform.position, transform.rotation);
-        Destroy(newHitEff, 1f);
+        Destroy(newHitEff.gameObject, 1f);
         yield return new WaitForSeconds(3f);
         transform.position = originPos;
         dying = false;
