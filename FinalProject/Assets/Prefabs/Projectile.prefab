@@ -113,6 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78d989bcaa470b4294d3fb33ab1e594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
+  respawnEffect: {fileID: 54115225654853568, guid: bb81c56665697704dbaf7fe54b48a57e,
+    type: 2}
   originPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114196508720493940
 MonoBehaviour:
