@@ -44,7 +44,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1031613323513542
 GameObject:
   m_ObjectHideFlags: 1
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 33135473169615182}
   - component: {fileID: 65681124853845892}
   - component: {fileID: 23642814169291712}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 4081678898077556}
   - component: {fileID: 33332474427919886}
   - component: {fileID: 65469540216382070}
-  - component: {fileID: 23573222597300742}
   - component: {fileID: 114782317609845484}
   m_Layer: 0
   m_Name: teleportFloor
@@ -311,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1707457464210912
 GameObject:
   m_ObjectHideFlags: 1
@@ -335,6 +334,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4109207036782454}
+  - component: {fileID: 65011734818843836}
+  - component: {fileID: 114976160532824336}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -383,7 +384,7 @@ GameObject:
   - component: {fileID: 33597574044944824}
   - component: {fileID: 65786017588579964}
   - component: {fileID: 23749610156684058}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1866507038128870
 GameObject:
   m_ObjectHideFlags: 1
@@ -499,7 +500,7 @@ GameObject:
   - component: {fileID: 33088429471135066}
   - component: {fileID: 65629780350437170}
   - component: {fileID: 23595002654421152}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +536,7 @@ GameObject:
   - component: {fileID: 33955592320249052}
   - component: {fileID: 65617176540802812}
   - component: {fileID: 23365957265551772}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1278,38 +1279,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23573222597300742
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1689265659771928}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 417e639b66cd3a24e9c5312be99ce3bd, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23595002654421152
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1678,6 +1647,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1933067999258580}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65011734818843836
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711977092800082}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 9, z: 6}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65026895146893654
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2295,6 +2276,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
   m_Text: TELEPORT
+--- !u!114 &114976160532824336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711977092800082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f4e25efdbe18844a35aca847271d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blue: {fileID: 2100000, guid: 8c8520b39de93614ab0f48d0832f945a, type: 2}
+  counter: 2
 --- !u!120 &120773438346339510
 LineRenderer:
   m_ObjectHideFlags: 1
