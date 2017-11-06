@@ -18,8 +18,10 @@ public class EnemyAI : MonoBehaviour
 	private bool _reachedEnd;
 	public bool reachedEnd
 	{
+
 		get { return _reachedEnd || transform.parent.position == path[path.Count - 1].transform.position; }
-		set { _reachedEnd = value; }
+		set { _reachedEnd = value;
+        }
 	}
 
 	private static Dictionary<int, List<PathPoint>> paths = new Dictionary<int, List<PathPoint>>();
@@ -127,8 +129,21 @@ public class EnemyAI : MonoBehaviour
 
 	protected virtual void die()
 	{
-		if(reachedEnd) Debug.Log(transform.parent.name + " reached the end");
-		else Debug.Log(transform.parent.name + " was killed");
-		Destroy(gameObject); //TODO: Replace with a real death animation and such
+        if (reachedEnd)
+        {
+            Debug.Log(transform.parent.name + " reached the end");
+            GameManager.lives--;
+            GameManager.consecutiveKills = 0;
+            Debug.Log("Lives remaining: " + GameManager.lives);
+        }
+        else
+        {
+            Debug.Log(transform.parent.name + " was killed");
+            GameManager.score += (int)(10 * GameManager.scoreMult);
+            GameManager.consecutiveKills++;
+            Debug.Log("Score is now: " + GameManager.score);
+
+        }
+        Destroy(gameObject); //TODO: Replace with a real death animation and such
 	}
 }
