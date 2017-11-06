@@ -9,6 +9,9 @@ public class Projectile : MonoBehaviour
     bool primed;
     bool dying;
 
+    public Transform hitEffect;
+    public Rigidbody respawnEffect;
+
     public Vector3 originPos;
     // Use this for initialization
     void Start()
@@ -36,13 +39,17 @@ public class Projectile : MonoBehaviour
 
     void OnHandHoverEnd(Hand hand)
     {
-        Debug.Log("Exit");
+        // Debug.Log("Exit");
     }
 
     void OnCollisionEnter(Collision coll)
     {
         // if it hit's enemy. Take damage.
         // if (primed) { Destroy(this.gameObject); }
+        if(coll.collider.GetComponent<EnemyAI>() != null && !dying)
+        {
+            StartCoroutine(Die());
+        }
     }
 
     public void primeProjectile()
@@ -52,11 +59,14 @@ public class Projectile : MonoBehaviour
 
     IEnumerator Die()
     {
+        yield return new WaitForEndOfFrame();
         dying = true;
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         GetComponent<Collider>().enabled = false;
+        Transform newHitEff = Instantiate(hitEffect, transform.position, transform.rotation);
+        Destroy(newHitEff.gameObject, 1f);
         yield return new WaitForSeconds(3f);
         transform.position = originPos;
         dying = false;
@@ -64,6 +74,9 @@ public class Projectile : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponent<Collider>().enabled = true;
+        Rigidbody newRespawnEff = Instantiate(respawnEffect, transform.position, Quaternion.identity);
+        newRespawnEff.angularVelocity = new Vector3(0, 180, 0);
+        Destroy(newRespawnEff.gameObject, 3f);
         primed = false;
     }
 }
