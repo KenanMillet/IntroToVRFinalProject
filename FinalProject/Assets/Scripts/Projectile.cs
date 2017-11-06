@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
 
     public Transform hitEffect;
     public Rigidbody respawnEffect;
+	public float respawnTime;
 
     public Vector3 originPos;
     // Use this for initialization
@@ -67,7 +68,7 @@ public class Projectile : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         Transform newHitEff = Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(newHitEff.gameObject, 1f);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(respawnTime);
         transform.position = originPos;
         dying = false;
         GetComponent<MeshRenderer>().enabled = true;

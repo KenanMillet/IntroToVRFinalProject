@@ -6,6 +6,7 @@ public class TowerScript : MonoBehaviour {
     public Material blue;
     public int counter = 2;
 	private bool once = true;
+	public Transform Base;
 
 	// Use this for initialization
 	void Start () {

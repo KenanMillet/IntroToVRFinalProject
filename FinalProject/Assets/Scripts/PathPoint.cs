@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class PathPoint : MonoBehaviour
 {
+	//private void Awake()
+	//{
+	//	DontDestroyOnLoad(this);
+	//}
+
 	private void Start()
 	{
 		GetComponent<SpriteRenderer>().enabled = false;

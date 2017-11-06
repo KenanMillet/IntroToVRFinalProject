@@ -36,7 +36,8 @@ public class GazeTeleporting : MonoBehaviour {
 		// STEP 4: shoot the Raycast
 		if (Physics.Raycast (myRay, out myRayHit)) {
 			obj = myRayHit.collider.gameObject;
-            if(obj.name == "Tower")
+			TowerScript tower = obj.GetComponent<TowerScript>();
+			if (tower)
             {
                 obj.GetComponent<TowerScript>().counter = 2;
                 Debug.Log("I'm looking at " + myRayHit.collider.name); // the thing the raycast hit
@@ -52,13 +53,13 @@ public class GazeTeleporting : MonoBehaviour {
 						SteamVR_Fade.Start (Color.black, 0);
 						SteamVR_Fade.Start (Color.clear, teleportFadeTime);
 
-						player.transform.position = new Vector3 (myRayHit.transform.position.x, player.transform.position.y, myRayHit.transform.position.z);
+						player.transform.position = new Vector3(myRayHit.transform.position.x, tower.Base.position.y + tower.Base.lossyScale.y/2, myRayHit.transform.position.z);
 					}
 				} else if (Input.GetKeyDown (KeyCode.Space)) {
 					SteamVR_Fade.Start (Color.black, 0);
 					SteamVR_Fade.Start (Color.clear, teleportFadeTime);
 
-					player.transform.position = new Vector3 (myRayHit.transform.position.x, player.transform.position.y, myRayHit.transform.position.z);
+					player.transform.position = new Vector3(myRayHit.transform.position.x, tower.Base.position.y + tower.Base.lossyScale.y / 2, myRayHit.transform.position.z);
 
 				}
 

@@ -24,23 +24,22 @@ public class EnemyAI : MonoBehaviour
         }
 	}
 
-	private static Dictionary<int, List<PathPoint>> paths = new Dictionary<int, List<PathPoint>>();
 	protected List<PathPoint> path
 	{
 		get
 		{
 			try
 			{
-				return paths[Group];
+				return GameManager.paths[Group];
 			}
 			catch(KeyNotFoundException)
 			{
-				paths.Add(Group, null);
+				GameManager.paths.Add(Group, null);
 				initPathing();
-				return paths[Group];
+				return GameManager.paths[Group];
 			}
 		}
-		private set { paths[Group] = value; }
+		private set { GameManager.paths[Group] = value; }
 	}
 	protected int index;
 	protected Vector3 segment;
@@ -88,16 +87,16 @@ public class EnemyAI : MonoBehaviour
 	public static bool UpdatePathingForGroup(int group, PathPoint point, bool pointAdded, bool adjustOnMatch = true)
 	{
 		//location = index in path that has same Order as point (or bitwise compliment of first element with larger order if there is no match)
-		int location = paths[group].BinarySearch(point, new PathPoint.OrderComparator());
+		int location = GameManager.paths[group].BinarySearch(point, new PathPoint.OrderComparator());
 
 		//if there are multiple points in the path with the same order, make location refer to the first of those points
-		while (location > 0 && paths[group][location - 1].Order == paths[group][location].Order) --location;
+		while (location > 0 && GameManager.paths[group][location - 1].Order == GameManager.paths[group][location].Order) --location;
 
 		//when adding a point, if no match was found, bitwise complement location to get spot where point should be inserted; otherwise, place as normal
-		if (pointAdded) paths[group].Insert((location < 0 ? ~location : location), point);
+		if (pointAdded) GameManager.paths[group].Insert((location < 0 ? ~location : location), point);
 
 		//when removing, remove the point at location if and only if it is positive
-		else if (location >= 0) paths[group].RemoveAt(location);
+		else if (location >= 0) GameManager.paths[group].RemoveAt(location);
 
 		//if the point is negative, we never found it
 		else Debug.Log("[Pathing] Attempted to remove a path point from a group which does not contain that path point");
@@ -105,7 +104,7 @@ public class EnemyAI : MonoBehaviour
 		//if we should adjust on match, and there was a match
 		if (adjustOnMatch && location >= 0)
 		{
-			for (int i = location + 1; i < paths[group].Count; ++i) paths[group][i].Order++;
+			for (int i = location + 1; i < GameManager.paths[group].Count; ++i) GameManager.paths[group][i].Order++;
 		}
 
 		//return whether or not there was a point with the same order already
@@ -120,6 +119,16 @@ public class EnemyAI : MonoBehaviour
 			if (p.Group != Group) path.Remove(p);
 		}
 		path.Sort((a, b) => a.Order.CompareTo(b.Order));
+	}
+
+	public static void initPathing(int group)
+	{
+		GameManager.paths[group] = new List<PathPoint>(FindObjectsOfType<PathPoint>() as PathPoint[]);
+		foreach (PathPoint p in GameManager.paths[group])
+		{
+			if (p.Group != group) GameManager.paths[group].Remove(p);
+		}
+		GameManager.paths[group].Sort((a, b) => a.Order.CompareTo(b.Order));
 	}
 
 	protected virtual void damage(Projectile p)
