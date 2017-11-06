@@ -9,7 +9,14 @@ public class GameManager : MonoBehaviour {
     public static int score = 0;
     public static int highScore;
     public static int consecutiveKills = 0;
-	
+	public static Dictionary<int, List<PathPoint>> paths = new Dictionary<int, List<PathPoint>>();
+
+	private void Awake()
+	{
+		RefreshPathPoints();
+		EnemySpawner.WaveNo = 0;
+	}
+
 	void Update () {
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -30,6 +37,26 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
+	public static void RefreshPathPoints()
+	{
+		paths = new Dictionary<int, List<PathPoint>>();
+		foreach (PathPoint p in FindObjectsOfType<PathPoint>())
+		{
+			try
+			{
+				paths[p.Group].Add(p);
+			} catch
+			{
+				paths[p.Group] = new List<PathPoint>();
+				paths[p.Group].Add(p);
+			}
+		}
+		foreach (var k in paths.Keys)
+		{
+			paths[k].Sort((a, b) => a.Order.CompareTo(b.Order));
+		}
+	}
+
     public static void Restart()
     {
         if (highScore < score) highScore = score;
@@ -37,6 +64,6 @@ public class GameManager : MonoBehaviour {
         lives = 10;
         consecutiveKills = 0;
         score = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);      
-    }
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
 }
