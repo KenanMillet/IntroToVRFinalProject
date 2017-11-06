@@ -46,14 +46,21 @@ public class GazeTeleporting : MonoBehaviour {
                 {
                     re.material = red;
                 }
-                if (myController.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
-                {
-                    //if (myController.GetTouch (SteamVR_Controller.ButtonMask.Touchpad)) {
-                    SteamVR_Fade.Start(Color.black, 0);
-                    SteamVR_Fade.Start(Color.clear, teleportFadeTime);
+				if (myController != null) {
+					if (myController.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad)) {
+						//if (myController.GetTouch (SteamVR_Controller.ButtonMask.Touchpad)) {
+						SteamVR_Fade.Start (Color.black, 0);
+						SteamVR_Fade.Start (Color.clear, teleportFadeTime);
 
-                    player.transform.position = new Vector3(myRayHit.transform.position.x, player.transform.position.y, myRayHit.transform.position.z);
-                }
+						player.transform.position = new Vector3 (myRayHit.transform.position.x, player.transform.position.y, myRayHit.transform.position.z);
+					}
+				} else if (Input.GetKeyDown (KeyCode.Space)) {
+					SteamVR_Fade.Start (Color.black, 0);
+					SteamVR_Fade.Start (Color.clear, teleportFadeTime);
+
+					player.transform.position = new Vector3 (myRayHit.transform.position.x, player.transform.position.y, myRayHit.transform.position.z);
+
+				}
 
             }
 
