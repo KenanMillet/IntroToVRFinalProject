@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1822832284041478}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.112, z: 0.419}
+  m_LocalPosition: {x: -7.5458393, y: 1.39957, z: 6.5803747}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,6 +113,7 @@ MonoBehaviour:
   hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
   respawnEffect: {fileID: 54115225654853568, guid: bb81c56665697704dbaf7fe54b48a57e,
     type: 2}
+  respawnTime: 0.2
   originPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114247087974657834
 MonoBehaviour:
