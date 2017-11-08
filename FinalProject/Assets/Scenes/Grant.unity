@@ -1466,6 +1466,21 @@ Prefab:
       propertyPath: m_Name
       value: Projectile-CustomThrow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
+        type: 2}
+      propertyPath: originPos.x
+      value: -7.508
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
+        type: 2}
+      propertyPath: originPos.y
+      value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
+        type: 2}
+      propertyPath: originPos.z
+      value: 6.83
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb15736f042d2e64ab5ac945837b3675, type: 2}
   m_IsPrefabParent: 0
