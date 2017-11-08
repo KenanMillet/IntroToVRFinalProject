@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - Throwable
+  - Ground
   layers:
   - Default
   - TransparentFX
