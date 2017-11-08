@@ -1,30 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class TowerScript : MonoBehaviour {
     public Material blue;
-    public int counter = 2;
-	private bool once = true;
+	public Material red;
 	public Transform Base;
+	public float teleportFadeTime;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        counter = Mathf.Max(counter - 1, 0);
-		if (counter == 0 && once)
+	GameObject player { get { return GetComponent<GazeButton>().observer.gameObject; } }
+
+	public void allowTeleport()
+	{
+		Player p = player.transform.root.GetComponentInChildren<Player>();
+		if (p == null) return;
+
+		foreach (Renderer re in GetComponentsInChildren<Renderer>())
 		{
-			Renderer[] r = GetComponentsInChildren<Renderer>();
-			foreach (Renderer re in r)
-			{
-				re.material = blue;
-			}
-			once = false;
+			re.material = red;
 		}
-		if(counter > 0) once = true;
+
+		foreach (Hand hand in p.hands)
+		{
+			if (Input.GetKeyDown(KeyCode.Space) || hand.controller != null && hand.controller.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+			{
+				SteamVR_Fade.Start(Color.black, 0);
+				SteamVR_Fade.Start(Color.clear, teleportFadeTime);
+
+				player.transform.root.position = Base.position + new Vector3(0, Base.lossyScale.y/2, 0);
+			}
+		}
+	}
+
+	public void denyTeleport()
+	{
+		foreach (Renderer re in GetComponentsInChildren<Renderer>())
+		{
+			re.material = blue;
+		}
 	}
 }

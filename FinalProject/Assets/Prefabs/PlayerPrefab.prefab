@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4213340001036826}
   - component: {fileID: 20062084751749700}
   - component: {fileID: 114144639678033538}
-  - component: {fileID: 114828734935561692}
   m_Layer: 0
   m_Name: FallbackObjects
   m_TagString: Untagged
@@ -438,7 +437,6 @@ GameObject:
   - component: {fileID: 114603825644654204}
   - component: {fileID: 92139090532440618}
   - component: {fileID: 124396622302948698}
-  - component: {fileID: 114672069130390892}
   - component: {fileID: 114163129095007860}
   m_Layer: 0
   m_Name: VRCamera
@@ -1263,22 +1261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad1e469d4e3e04489f9a36419f1a4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114672069130390892
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992707814521024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86eaf1ba4062e2439446ab42f92a375, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1230632897742146}
-  teleportFadeTime: 0.1
-  blue: {fileID: 2100000, guid: 8c8520b39de93614ab0f48d0832f945a, type: 2}
-  red: {fileID: 2100000, guid: f122ebda54d5a954d86c01372f509090, type: 2}
-  myHand: {fileID: 114990721300073636}
 --- !u!114 &114679670833510764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1388,22 +1370,6 @@ MonoBehaviour:
   externalCamera: {fileID: 0}
   externalCameraConfigPath: externalcamera.cfg
   trackingSpace: 1
---- !u!114 &114828734935561692
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006324686426718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86eaf1ba4062e2439446ab42f92a375, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1230632897742146}
-  teleportFadeTime: 0.1
-  blue: {fileID: 2100000, guid: 8c8520b39de93614ab0f48d0832f945a, type: 2}
-  red: {fileID: 2100000, guid: f122ebda54d5a954d86c01372f509090, type: 2}
-  myHand: {fileID: 114126455271227714}
 --- !u!114 &114886913776851972
 MonoBehaviour:
   m_ObjectHideFlags: 1
