@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using cakeslice;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
@@ -11,15 +10,23 @@ public class TowerScript : MonoBehaviour {
 
 	GameObject player { get { return GetComponent<GazeButton>().observer.gameObject; } }
 
+	private void Start()
+	{
+		denyTeleport();
+	}
+
+	public void onGlance()
+	{
+		foreach (Outline outline in GetComponentsInChildren<Outline>())
+		{
+			outline.enabled = true;
+		}
+	}
+
 	public void allowTeleport()
 	{
 		Player p = player.transform.root.GetComponentInChildren<Player>();
 		if (p == null) return;
-
-		foreach (Renderer re in GetComponentsInChildren<Renderer>())
-		{
-			re.material = red;
-		}
 
 		foreach (Hand hand in p.hands)
 		{
@@ -35,9 +42,9 @@ public class TowerScript : MonoBehaviour {
 
 	public void denyTeleport()
 	{
-		foreach (Renderer re in GetComponentsInChildren<Renderer>())
+		foreach (Outline outline in GetComponentsInChildren<Outline>())
 		{
-			re.material = blue;
+			outline.enabled = false;
 		}
 	}
 }
