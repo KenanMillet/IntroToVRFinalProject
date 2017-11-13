@@ -7,12 +7,14 @@ public class EnemyAI : MonoBehaviour
 	protected float Speed, MaxHealth;
 	[SerializeField]
 	protected int Group;
+	[SerializeField]
+	protected Gradient healthColors;
 
 	private float _health;
 	protected float health
 	{
 		get { return _health; }
-		set { _health = value; dying = (value == 0); }
+		set { _health = value; dying = (value == 0); GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth)); }
 	}
 
 	private bool _reachedEnd;
