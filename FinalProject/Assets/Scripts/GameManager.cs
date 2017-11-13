@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static float scoreMult = 1;
+	public static int maxLives = 10;
     public static int lives = 10;
     public static int score = 0;
     public static int highScore;
