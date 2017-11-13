@@ -74,6 +74,8 @@ public class Projectile : MonoBehaviour
         rbody.isKinematic = true;
         rbody.constraints = RigidbodyConstraints.FreezeAll;
         myColl.enabled = false;
+        TrailRenderer myTrail = GetComponent<TrailRenderer>();
+        myTrail.enabled = false;
         Transform newHitEff = Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(newHitEff.gameObject, 1f);
         yield return new WaitForSeconds(respawnTime);
@@ -84,6 +86,7 @@ public class Projectile : MonoBehaviour
         rbody.constraints = RigidbodyConstraints.None;
         rbody.useGravity = false;
         myColl.enabled = true;
+        myTrail.enabled = true;
         Rigidbody newRespawnEff = Instantiate(respawnEffect, transform.position, Quaternion.identity);
         newRespawnEff.angularVelocity = new Vector3(0, 180, 0);
         Destroy(newRespawnEff.gameObject, 3f);
