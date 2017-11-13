@@ -1,23 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
 	public float SpawnInterval;
 
-	[Serializable]
-	public class Wave
-	{
-		[Serializable]
-		public class Group
-		{
-			public int Quantity;
-			public GameObject Type;
-		}
-		public Group[] enemies;
-	}
-	public Wave[] waves;
+	public List<GameObject> wave = new List<GameObject>();
 
 	private static int _waveNo;
 	public static int WaveNo
@@ -32,7 +22,6 @@ public class EnemySpawner : MonoBehaviour
 
 	void Start ()
 	{
-		StartCoroutine("Spawn");
 	}
 	
 	void Update ()
@@ -42,19 +31,13 @@ public class EnemySpawner : MonoBehaviour
 
 	IEnumerator Spawn()
 	{
-		if(WaveNo < waves.Length)
+		foreach (GameObject enemy in wave)
 		{
-			int n = WaveNo;
-			foreach (Wave.Group group in waves[n].enemies)
-			{
-				for (int i = 0; i < group.Quantity; ++i)
-				{
-					Instantiate(group.Type, transform.position, Quaternion.identity);
-					yield return new WaitForSeconds(SpawnInterval);
-				}
-			}
-			yield return new WaitForSeconds(5);
-			WaveNo++;
+				
+			Instantiate(enemy, transform.position, Quaternion.identity);
+			yield return new WaitForSeconds(SpawnInterval);
+				
 		}
+	
 	}
 }
