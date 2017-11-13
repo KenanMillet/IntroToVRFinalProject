@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 public class TowerScript : MonoBehaviour {
     public Material blue;
 	public Material red;
-	public Transform Base;
+	public Transform TeleportPoint;
 	public float teleportFadeTime;
 
 	GameObject player { get { return GetComponent<GazeButton>().observer.gameObject; } }
@@ -35,7 +35,7 @@ public class TowerScript : MonoBehaviour {
 				SteamVR_Fade.Start(Color.black, 0);
 				SteamVR_Fade.Start(Color.clear, teleportFadeTime);
 
-				player.transform.root.position = Base.position + new Vector3(0, Base.lossyScale.y/2, 0);
+				player.transform.root.position = TeleportPoint.transform.position;
 			}
 		}
 	}
