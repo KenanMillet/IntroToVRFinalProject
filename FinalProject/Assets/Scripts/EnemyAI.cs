@@ -3,18 +3,20 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+	public float Speed;
 	[SerializeField]
-	protected float Speed, MaxHealth;
+	protected float MaxHealth;
 	[SerializeField]
 	protected int Group;
 	[SerializeField]
 	protected Gradient healthColors;
+	public float spawnInterval;
 
 	private float _health;
-	protected float health
+	public float health
 	{
 		get { return _health; }
-		set { _health = value; dying = (value == 0); GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth)); }
+		protected set { _health = value; dying = (value == 0); GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth)); }
 	}
 
 	private bool _reachedEnd;

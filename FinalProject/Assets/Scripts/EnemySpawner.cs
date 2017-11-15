@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemySpawner : MonoBehaviour
 {
-	public float SpawnInterval;
-
-	public List<GameObject> wave = new List<GameObject>();
+	public float spawnIntervalOverride = 0;
 
 	private static int _waveNo;
-	public static int WaveNo
+	public static int waveNo
 	{
 		get { return _waveNo; }
 		set
@@ -20,24 +18,18 @@ public class EnemySpawner : MonoBehaviour
 		}
 	}
 
-	void Start ()
-	{
-	}
-	
-	void Update ()
-	{
-		
-	}
-
 	IEnumerator Spawn()
 	{
-		foreach (GameObject enemy in wave)
+		ProceduralSpawnScript wavegen = GetComponent<ProceduralSpawnScript>();
+		float healthPool = 0;
+		foreach (GameObject enemy in wavegen.Wave(waveNo))
 		{
-				
+			EnemyAI enemyStats = enemy.GetComponentInChildren<EnemyAI>();
+			healthPool += enemyStats.health;
 			Instantiate(enemy, transform.position, Quaternion.identity);
-			yield return new WaitForSeconds(SpawnInterval);
-				
+			yield return new WaitForSeconds(Mathf.Max(spawnIntervalOverride, enemyStats.spawnInterval));
 		}
-	
+		yield return new WaitForSeconds(wavegen.CooldownTime(waveNo, healthPool));
+		++waveNo;
 	}
 }

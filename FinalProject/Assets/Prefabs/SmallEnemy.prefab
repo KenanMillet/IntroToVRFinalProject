@@ -221,6 +221,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  spawnInterval: 0.33333334
 --- !u!135 &135554433217713462
 SphereCollider:
   m_ObjectHideFlags: 1
