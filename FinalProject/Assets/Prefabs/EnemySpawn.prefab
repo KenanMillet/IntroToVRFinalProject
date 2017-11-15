@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 212418307608750368}
   - component: {fileID: 114261702340000228}
   - component: {fileID: 114191550984639514}
+  - component: {fileID: 114112356610674056}
   m_Layer: 0
   m_Name: Path Point
   m_TagString: Untagged
@@ -486,13 +487,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114191550984639514
+--- !u!114 &114112356610674056
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1833661568030138}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5387916d5ccc2214a9f28a1f9e826962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleEnemies:
+  - {fileID: 1256301849984684, guid: 0f321b2d26b88e94d8946577f80014f7, type: 2}
+  - {fileID: 1617918953955474, guid: 0903e999955772d46958d6f267fd93e6, type: 2}
+  - {fileID: 1729956987861980, guid: 728b2ce039524ea49b4733148b6d97d3, type: 2}
+  incomingWave: []
+  wave: 0
+  enemiesPerWave: 5
+  spawnInterval: 1.3
+  timeBetweenWaves: 0
+--- !u!114 &114191550984639514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833661568030138}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2614a074b3d36f449c762792fa33f24, type: 3}
   m_Name: 
