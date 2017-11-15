@@ -43,7 +43,7 @@ public class ProceduralSpawner : MonoBehaviour {
         incomingWave = new GameObject[enemiesPerWave];
         for (int i = 0; i < incomingWave.Length; i++)
         {
-            int enemyIndex = Random.Range(0, 3);
+            int enemyIndex = Random.Range(0, possibleEnemies.Length);
             incomingWave[i] = possibleEnemies[enemyIndex];
             
         }

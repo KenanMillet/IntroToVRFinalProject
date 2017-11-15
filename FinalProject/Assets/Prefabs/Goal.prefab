@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Group: 0
-  Order: 5
+  Order: 999
 --- !u!212 &212333385917622518
 SpriteRenderer:
   m_ObjectHideFlags: 1
