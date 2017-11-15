@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	private void Awake()
 	{
 		RefreshPathPoints();
-		EnemySpawner.WaveNo = 0;
+		EnemySpawner.waveNo = 1;
 	}
 
 	void Update () {
