@@ -31,10 +31,6 @@ public class HandScript : MonoBehaviour {
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
                 Vector3 velocity = hand.GetTrackedObjectVelocity();
                 Debug.Log("Velocity of throw is: " + velocity.magnitude);
-                if(heldObject.GetComponent<Projectile>() != null && velocity.magnitude > 5f)
-                {
-                    heldObject.GetComponent<Projectile>().primeProjectile();
-                }
                 // heldObject.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
                 heldObject = null;
             }
