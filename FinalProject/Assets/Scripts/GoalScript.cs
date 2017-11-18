@@ -17,7 +17,7 @@ public class GoalScript : MonoBehaviour
 	{
 		foreach(Renderer renderer in renderers)
 		{
-			renderer.material.color = healthColors.Evaluate(1.0f - (float)GameManager.lives / (float)GameManager.maxLives);
+			renderer.material.color = healthColors.Evaluate(1.0f - GameManager.lives / (float)GameManager.maxLives);
 		}
 	}
 }
