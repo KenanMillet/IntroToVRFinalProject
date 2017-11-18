@@ -58,6 +58,6 @@ public class CustomThrowing : MonoBehaviour {
 
     void OnTriggerExit(Collider coll)
     {
-        Debug.Log("Ah");
+        // Debug.Log("Ah");
     }
 }
