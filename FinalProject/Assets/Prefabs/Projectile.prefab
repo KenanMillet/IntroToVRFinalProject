@@ -27,7 +27,6 @@ GameObject:
   - component: {fileID: 114790170899442100}
   - component: {fileID: 114764757913639288}
   - component: {fileID: 114171300188586814}
-  - component: {fileID: 114196508720493940}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Throwable
@@ -116,19 +115,11 @@ MonoBehaviour:
   hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
   respawnEffect: {fileID: 54115225654853568, guid: bb81c56665697704dbaf7fe54b48a57e,
     type: 2}
+  respawnTime: 0
   originPos: {x: 0, y: 0, z: 0}
---- !u!114 &114196508720493940
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1100028311356096}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e277bde62eb63c94ba07a6473d30cd8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originPos: {x: 0, y: 0, z: 0}
+  rbody: {fileID: 0}
+  myColl: {fileID: 0}
+  myRend: {fileID: 0}
 --- !u!114 &114227523628165814
 MonoBehaviour:
   m_ObjectHideFlags: 1
