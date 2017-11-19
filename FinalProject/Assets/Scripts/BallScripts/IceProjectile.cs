@@ -17,7 +17,7 @@ public class IceProjectile : ProjectileType {
             {
                 EnemyAI enem = hit.GetComponent<EnemyAI>();
                 if (enem) {
-                    // hit.TakeDamage();
+                    enem.damage(proj);
                     enem.StartCoroutine(freezeEffect(enem));
                     Debug.Log("Froze " + hit.name + " for " + damage + " points of damage");
                 }
@@ -30,8 +30,11 @@ public class IceProjectile : ProjectileType {
     public IEnumerator freezeEffect(EnemyAI enemy)
     {
         // get enemy's original speed
+        float originSpeed = enemy.Speed;
         // reduce enemy's current speed
+        enemy.Speed = originSpeed / 2;
         yield return new WaitForSeconds(duration);
         // return enemy's speed to original
+        enemy.Speed = originSpeed;
     }
 }
