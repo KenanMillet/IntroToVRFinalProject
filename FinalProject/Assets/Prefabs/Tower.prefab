@@ -38,6 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4994590625421472}
+  - component: {fileID: 114296002361651568}
   m_Layer: 0
   m_Name: AmmoSpawn
   m_TagString: Untagged
@@ -92,6 +93,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4029906349743346}
+  - component: {fileID: 114259793330647382}
   m_Layer: 0
   m_Name: Spawnpoint
   m_TagString: Untagged
@@ -107,6 +109,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4961358698730988}
+  - component: {fileID: 114311958737411624}
   m_Layer: 0
   m_Name: Spawnpoint (3)
   m_TagString: Untagged
@@ -141,6 +144,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4418810847835256}
+  - component: {fileID: 114301345286622124}
   m_Layer: 0
   m_Name: Spawnpoint (1)
   m_TagString: Untagged
@@ -284,6 +288,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4938153526205094}
+  - component: {fileID: 114222847070659326}
   m_Layer: 0
   m_Name: Spawnpoint (4)
   m_TagString: Untagged
@@ -334,6 +339,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4338846114447820}
+  - component: {fileID: 114146667412356470}
   m_Layer: 0
   m_Name: Spawnpoint (2)
   m_TagString: Untagged
@@ -379,7 +385,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711977092800082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4455900270569166}
@@ -1086,6 +1092,21 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
+--- !u!114 &114146667412356470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730755412646140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e611ba9c64dd849915d8d78e1f16a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: {fileID: 114296002361651568}
+  baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
+    type: 2}
+  delay: 0.33
 --- !u!114 &114187772711444620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1116,6 +1137,86 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
+--- !u!114 &114222847070659326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560693541076308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e611ba9c64dd849915d8d78e1f16a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: {fileID: 114296002361651568}
+  baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
+    type: 2}
+  delay: 0.33
+--- !u!114 &114259793330647382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140273408311174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e611ba9c64dd849915d8d78e1f16a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: {fileID: 114296002361651568}
+  baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
+    type: 2}
+  delay: 0.33
+--- !u!114 &114296002361651568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1033678344957874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9bd39a87c49d664badd496fc92dbdfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballBasket:
+  - type: {fileID: 11400000, guid: 689460846729b9d40b2737a7b587da2f, type: 2}
+    count: 1
+  - type: {fileID: 11400000, guid: 2d2cf4eba0f91ad4c8f9aad96f9e7699, type: 2}
+    count: 1
+  - type: {fileID: 11400000, guid: b592951d129d5084ea7aae92c5433832, type: 2}
+    count: 17
+  - type: {fileID: 11400000, guid: da52f1acc60fc074a86e0adeb2caf8a8, type: 2}
+    count: 1
+--- !u!114 &114301345286622124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227529800298178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e611ba9c64dd849915d8d78e1f16a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: {fileID: 114296002361651568}
+  baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
+    type: 2}
+  delay: 0.33
+--- !u!114 &114311958737411624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167629808907072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e611ba9c64dd849915d8d78e1f16a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: {fileID: 114296002361651568}
+  baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
+    type: 2}
+  delay: 0.33
 --- !u!114 &114349153304525982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1158,6 +1259,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 223677578206808018}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnStare:
@@ -1165,6 +1277,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114976160532824336}
         m_MethodName: allowTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114816840368121126}
+        m_MethodName: doABunchOfUpdating
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1182,6 +1305,17 @@ MonoBehaviour:
       - m_Target: {fileID: 114976160532824336}
         m_MethodName: denyTeleport
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 223677578206808018}
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

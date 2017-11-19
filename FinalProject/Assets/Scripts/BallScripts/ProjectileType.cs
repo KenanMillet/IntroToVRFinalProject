@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileType : ScriptableObject {
@@ -13,6 +12,7 @@ public class ProjectileType : ScriptableObject {
     public virtual void setup(Projectile proj)
     {
         proj.GetComponent<MeshFilter>().mesh = model;
+		proj.GetComponent<Renderer>().material.color = baseColor;
         proj.GetComponent<TrailRenderer>().startColor = baseColor;
     }
 
