@@ -21,8 +21,6 @@ public class TowerScript : MonoBehaviour {
 		{
 			outline.enabled = true;
 		}
-
-
 	}
 
 	public void allowTeleport()

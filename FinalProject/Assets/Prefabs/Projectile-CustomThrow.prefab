@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentFlags: 12
+  attachmentFlags: -1
   attachmentPoint: 
   catchSpeedThreshold: 0
   restoreOriginalParent: 0
@@ -231,7 +231,29 @@ MonoBehaviour:
   attachEaseInAttachmentNames: []
   onPickUp:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114078046852325388}
+        m_MethodName: CallForNewSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1822832284041478}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onDetachFromHand:
@@ -255,10 +277,12 @@ MonoBehaviour:
   respawnEffect: {fileID: 54115225654853568, guid: bb81c56665697704dbaf7fe54b48a57e,
     type: 2}
   blueprint: {fileID: 11400000, guid: b592951d129d5084ea7aae92c5433832, type: 2}
+  spawner: {fileID: 0}
   rbody: {fileID: 54498081116739436}
   myColl: {fileID: 135734187337587398}
   myRend: {fileID: 23937069273926724}
   damage: 1
+  holstered: 1
 --- !u!114 &114247087974657834
 MonoBehaviour:
   m_ObjectHideFlags: 1
