@@ -14,6 +14,8 @@ public sealed class GazeButton : MonoBehaviour
 
 	private bool glancing = false;
 
+	private bool iLookedAtYouBefore = false;
+
 	public float StareTime { get; private set; }
 
 	public Transform observer { get { return FindObjectOfType<Player>().transform.GetComponentInChildren<Camera>().transform; } }
@@ -31,9 +33,20 @@ public sealed class GazeButton : MonoBehaviour
 				if (seeThroughWalls)
 				{
 					Debug.DrawRay(transform.position, observer.position, Color.yellow);
-					if (!glancing) OnGlance.Invoke();
+					if (!glancing) {
+						
+						OnGlance.Invoke ();
+
+					}
 					else
 					{
+						if (this.GetComponent<Transform> ().Find ("CanvasInfo") != null) {
+							Debug.Log (gameObject.name);
+							this.GetComponent<Transform> ().Find ("CanvasInfo").gameObject.GetComponent<Canvas> ().enabled = true;
+							this.GetComponent<Transform> ().Find ("CanvasInfo").Find ("Panel").GetComponent<CanvasInformation> ().doABunchOfUpdating (iLookedAtYouBefore);
+							iLookedAtYouBefore = true;
+						}
+						StareTime += Time.deltaTime;
 						StareTime += Time.deltaTime;
 						OnStare.Invoke();
 					}
@@ -44,10 +57,16 @@ public sealed class GazeButton : MonoBehaviour
 					RaycastHit rayHit = new RaycastHit();
 					if (Physics.Raycast(new Ray(observer.position, fromCameraToButton.normalized), out rayHit) && rayHit.transform == transform)
 					{
-						Debug.DrawRay(transform.position, observer.position, Color.yellow);
+						Debug.DrawRay(transform.position, observer.position, Color.green);
 						if (!glancing) OnGlance.Invoke();
 						else
 						{
+							//turn on hud
+							if (this.GetComponent<Transform> ().Find ("CanvasInfo") != null) {
+								this.GetComponent<Transform> ().Find ("CanvasInfo").gameObject.GetComponent<Canvas> ().enabled = true;
+								this.GetComponent<Transform> ().Find ("CanvasInfo").Find ("Panel").GetComponent<CanvasInformation> ().doABunchOfUpdating (iLookedAtYouBefore);
+								iLookedAtYouBefore = true;
+							}
 							StareTime += Time.deltaTime;
 							OnStare.Invoke();
 						}
@@ -55,6 +74,10 @@ public sealed class GazeButton : MonoBehaviour
 					}
 					else
 					{
+						if (this.GetComponent<Transform> ().Find ("CanvasInfo") != null) {
+							this.GetComponent<Transform> ().Find ("CanvasInfo").gameObject.GetComponent<Canvas> ().enabled = false;
+							this.GetComponent<Transform> ().Find ("CanvasInfo").Find ("Panel").GetComponent<CanvasInformation> ().setUpdateVar (false);
+						}
 						OnAvert.Invoke();
 						glancing = false;
 						StareTime = 0;
@@ -63,6 +86,11 @@ public sealed class GazeButton : MonoBehaviour
 			}
 			else
 			{
+				//turn off hud
+				if (this.GetComponent<Transform> ().Find ("CanvasInfo") != null) {
+					this.GetComponent<Transform> ().Find ("CanvasInfo").gameObject.GetComponent<Canvas> ().enabled = false;
+					this.GetComponent<Transform> ().Find ("CanvasInfo").Find ("Panel").GetComponent<CanvasInformation> ().setUpdateVar (false);
+				}
 				if (glancing) OnAvert.Invoke();
 				glancing = false;
 			}
