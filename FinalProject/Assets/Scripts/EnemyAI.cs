@@ -137,7 +137,7 @@ public class EnemyAI : MonoBehaviour
 
 	protected virtual void damage(Projectile p)
 	{
-		--health;
+		health -= p.damage;
 	}
 
 	protected virtual void die()

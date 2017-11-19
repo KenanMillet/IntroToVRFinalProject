@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 using Valve.VR.InteractionSystem;
 
@@ -10,13 +8,23 @@ public class Projectile : MonoBehaviour
     public Transform hitEffect;
     public Rigidbody respawnEffect;
 
-    public ProjectileType blueprint;
+	[SerializeField]
+    private ProjectileType _blueprint;
+	public ProjectileType blueprint
+	{
+		get { return _blueprint; }
+		set { _blueprint = value; value.setup(this); }
+	}
+
+	public BallSpawner spawner;
     
     public Rigidbody rbody;
     public SphereCollider myColl;
     public MeshRenderer myRend;
 
     public int damage;
+
+	public bool holstered = true;
 
     // Use this for initialization
     void Start() {
@@ -62,4 +70,10 @@ public class Projectile : MonoBehaviour
         // Deregister from spawner
         Destroy(gameObject);
     }
+
+	public void CallForNewSpawn()
+	{
+		if (holstered) spawner.Spawn();
+		holstered = false;
+	}
 }

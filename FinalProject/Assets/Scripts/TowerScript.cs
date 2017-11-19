@@ -46,5 +46,6 @@ public class TowerScript : MonoBehaviour {
 		{
 			outline.enabled = false;
 		}
+
 	}
 }
