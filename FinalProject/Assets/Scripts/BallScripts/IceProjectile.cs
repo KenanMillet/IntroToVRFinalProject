@@ -9,37 +9,22 @@ public class IceProjectile : ProjectileType {
     public float lifeSpan;
     public float duration;
 
+    public FreezeEffect freezePrefab;
+
     public override IEnumerator Die(Projectile proj, Collision coll)
     {
         float startTime = Time.time;
-        while(Time.time - startTime < lifeSpan)
-        {
-            Collider[] hits = Physics.OverlapSphere(proj.transform.position, radius, affectedTargets);
-            if (hits.Length > 0)
-            {
-                foreach (Collider hit in hits)
-                {
-                    EnemyAI enem = hit.GetComponent<EnemyAI>();
-                    if (enem) {
-                        enem.damage(proj);
-                        enem.StartCoroutine(freezeEffect(enem));
-                        Debug.Log("Froze " + hit.name + " for " + damage + " points of damage");
-                    }
-                }
-            }
-            yield return new WaitForEndOfFrame();
+        Vector3 hitPos = proj.transform.position;
+        FreezeEffect newFreeze = Instantiate(freezePrefab, hitPos, Quaternion.identity);
+        Debug.Log("Oh No!");
+        newFreeze.duration = duration;
+        newFreeze.GetComponent<SphereCollider>().radius = radius;
+        ParticleSystem[] parts = newFreeze.GetComponentsInChildren<ParticleSystem>();
+        foreach(ParticleSystem part in parts) {
+            ParticleSystem.MainModule main = part.main;
+            main.startSpeed = radius;
         }
         proj.Die();
-    }
-
-    public IEnumerator freezeEffect(EnemyAI enemy)
-    {
-        // get enemy's original speed
-        float originSpeed = enemy.Speed;
-        // reduce enemy's current speed
-        enemy.Speed = originSpeed / 2;
-        yield return new WaitForSeconds(duration);
-        // return enemy's speed to original
-        enemy.Speed = originSpeed;
+        yield return new WaitForEndOfFrame();
     }
 }
