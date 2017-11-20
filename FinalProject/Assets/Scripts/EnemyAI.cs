@@ -84,8 +84,7 @@ public class EnemyAI : MonoBehaviour
 
 	protected void OnCollisionEnter(Collision collision)
 	{
-		Projectile p = collision.gameObject.GetComponent<Projectile>();
-		if (p) damage(p);
+		
 	}
 
 	public static bool UpdatePathingForGroup(int group, PathPoint point, bool pointAdded, bool adjustOnMatch = true)
@@ -135,7 +134,7 @@ public class EnemyAI : MonoBehaviour
 		GameManager.paths[group].Sort((a, b) => a.Order.CompareTo(b.Order));
 	}
 
-	protected virtual void damage(Projectile p)
+	public virtual void damage(Projectile p)
 	{
 		health -= p.damage;
 	}
@@ -155,7 +154,6 @@ public class EnemyAI : MonoBehaviour
             GameManager.score += (int)(10 * GameManager.scoreMult);
             GameManager.consecutiveKills++;
             Debug.Log("Score is now: " + GameManager.score);
-
         }
         Destroy(gameObject); //TODO: Replace with a real death animation and such
 	}
