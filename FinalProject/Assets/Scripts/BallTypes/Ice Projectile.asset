@@ -19,4 +19,7 @@ MonoBehaviour:
   affectedTargets:
     serializedVersion: 2
     m_Bits: 256
+  lifeSpan: 0
   duration: 5
+  freezePrefab: {fileID: 114451890085440316, guid: 999b160a9923ca14c8115b65be527688,
+    type: 2}
