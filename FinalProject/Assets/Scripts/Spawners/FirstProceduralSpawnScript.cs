@@ -15,31 +15,31 @@ public class FirstProceduralSpawnScript : ProceduralSpawnScript {
     {
         //proceduralVal is calculated as a value added to a variable dependent on the current wave
         //and represents the total health pool alotted to a given wave
-        int proceduralVal = 14 + Random.Range((waveNo - 3) * 2, (waveNo - 3) * 4);
+        int proceduralVal = 20 + Random.Range((waveNo - 3) * 2, (waveNo - 3) * 4);
         int enemiesToSpawn = waveNo > 3 ? proceduralVal : 1 + (waveNo * 2);
-        GameObject[] wave = null;
+        List<GameObject> wave = null;
 
         bool procGen = waveNo > 3 ? true : false;
 
         //for first 3 waves, generate a wave of 3, 5, 7 enemies, respectively
         if (!procGen)
         {
-            wave = new GameObject[enemiesToSpawn];
-            for (int i = 0; i < wave.Length; i++)
+            wave = new List<GameObject>();
+            for (int i = 0; i < enemiesToSpawn; i++)
             {
                 int enemyIndex = Random.Range(0, enemyTypes.Length);
 
-                wave[i] = enemyTypes[enemyIndex];
+                wave.Add(enemyTypes[enemyIndex]);
             }
         }
         //if wave 4 or higher, generate a wave of variable size, dependent on the total health pool of the wave (which is itself variable)
         else
         {
             //the most possible units in a wave is equal to the value of proceduralVal - in the case where every enemy is a 1 health fast unit
-            wave = new GameObject[proceduralVal];
+            wave = new List<GameObject>();
 
             //keeps adding objects to the array and subtracting the required health from the pool until proceduralVal is <= 0
-            for (int i = 0;  proceduralVal > 0; i ++)
+            while(proceduralVal > 0)
             {
 
                 int enemyIndex = Random.Range(0, enemyTypes.Length);
@@ -59,12 +59,12 @@ public class FirstProceduralSpawnScript : ProceduralSpawnScript {
                         break;
   
                 }
-                wave[i] = enemyTypes[enemyIndex];
+                wave.Add(enemyTypes[enemyIndex]);
 
             }
             
         }
         
-        return wave;
+        return wave.ToArray();
     }
 }
