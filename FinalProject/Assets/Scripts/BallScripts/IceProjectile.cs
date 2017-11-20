@@ -6,20 +6,26 @@ using UnityEngine;
 public class IceProjectile : ProjectileType {
 
     public LayerMask affectedTargets;
+    public float lifeSpan;
     public float duration;
 
     public override IEnumerator Die(Projectile proj, Collision coll)
     {
-        Collider[] hits = Physics.OverlapSphere(proj.transform.position, radius, affectedTargets);
-        if (hits.Length > 0)
+        float startTime = Time.time;
+        while(Time.time - startTime < lifeSpan)
         {
-            foreach (Collider hit in hits)
+            Collider[] hits = Physics.OverlapSphere(proj.transform.position, radius, affectedTargets);
+            if (hits.Length > 0)
             {
-                EnemyAI enem = hit.GetComponent<EnemyAI>();
-                if (enem) {
-                    enem.damage(proj);
-                    enem.StartCoroutine(freezeEffect(enem));
-                    Debug.Log("Froze " + hit.name + " for " + damage + " points of damage");
+                foreach (Collider hit in hits)
+                {
+                    EnemyAI enem = hit.GetComponent<EnemyAI>();
+                    if (enem)
+                    {
+                        enem.damage(proj);
+                        enem.StartCoroutine(freezeEffect(enem));
+                        Debug.Log("Froze " + hit.name + " for " + damage + " points of damage");
+                    }
                 }
             }
         }
