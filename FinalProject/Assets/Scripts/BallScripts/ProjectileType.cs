@@ -20,7 +20,7 @@ public class ProjectileType : ScriptableObject {
     {
         EnemyAI enemy = coll.collider.GetComponent<EnemyAI>();
         if (enemy) {
-            /* Deal Damage.*/
+            enemy.damage(proj);
             Debug.Log("Hit " + coll.collider.name + " for " + damage + " points of damage");
         }
         proj.Die();
