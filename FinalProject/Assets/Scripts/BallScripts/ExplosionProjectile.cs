@@ -13,8 +13,12 @@ public class ExplosionProjectile : ProjectileType {
         if(hits.Length > 0)
         {
             foreach(Collider hit in hits) {
-                // hit.TakeDamage();
-                Debug.Log("Exploded " + hit.name + " for " + damage + " points of damage");
+                EnemyAI enem = hit.GetComponent<EnemyAI>();
+                if (enem)
+                {
+                    enem.damage(proj);
+                    Debug.Log("Exploded " + hit.name + " for " + damage + " points of damage");
+                }
             }
         }
         proj.Die();

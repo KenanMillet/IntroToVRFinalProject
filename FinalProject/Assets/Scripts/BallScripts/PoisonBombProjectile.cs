@@ -18,8 +18,12 @@ public class PoisonBombProjectile : ProjectileType {
             if(enemyColls.Length > 0)
             {
                 foreach(Collider enemy in enemyColls) {
-                    // enemy takes damage
-                    Debug.Log("Poisoned " + enemy.name + " with " + damage + " points of damage");
+                    EnemyAI enem = enemy.GetComponent<EnemyAI>();
+                    if (enem)
+                    {
+                        enem.damage(proj);
+                        Debug.Log("Exploded " + enemy.name + " for " + damage + " points of damage");
+                    }
                 }
             }
             yield return new WaitForSeconds(frequency);

@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 212418307608750368}
   - component: {fileID: 114261702340000228}
   - component: {fileID: 114191550984639514}
-  - component: {fileID: 114112356610674056}
+  - component: {fileID: 114123294484767876}
   m_Layer: 0
   m_Name: Path Point
   m_TagString: Untagged
@@ -604,7 +604,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114112356610674056
+--- !u!114 &114123294484767876
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -612,15 +612,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1833661568030138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d345c06c4900d334e8c20d1aa44f635b, type: 3}
+  m_Script: {fileID: 11500000, guid: 511dbc167383d6b408a751662b697fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTypes:
   - {fileID: 1729956987861980, guid: 728b2ce039524ea49b4733148b6d97d3, type: 2}
   - {fileID: 1617918953955474, guid: 0903e999955772d46958d6f267fd93e6, type: 2}
   - {fileID: 1256301849984684, guid: 0f321b2d26b88e94d8946577f80014f7, type: 2}
-  BaseCooldownTime: 30
-  HealthPoolModifier: 0.5
+  healthMod: 0.75
+  baseTime: 20
+  baseMin: 10
 --- !u!114 &114191550984639514
 MonoBehaviour:
   m_ObjectHideFlags: 1
