@@ -20,17 +20,16 @@ public class IceProjectile : ProjectileType {
                 foreach (Collider hit in hits)
                 {
                     EnemyAI enem = hit.GetComponent<EnemyAI>();
-                    if (enem)
-                    {
+                    if (enem) {
                         enem.damage(proj);
                         enem.StartCoroutine(freezeEffect(enem));
                         Debug.Log("Froze " + hit.name + " for " + damage + " points of damage");
                     }
                 }
             }
+            yield return new WaitForEndOfFrame();
         }
         proj.Die();
-        yield return new WaitForEndOfFrame();
     }
 
     public IEnumerator freezeEffect(EnemyAI enemy)
