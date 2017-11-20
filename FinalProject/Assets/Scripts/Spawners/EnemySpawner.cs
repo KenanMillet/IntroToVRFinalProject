@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -14,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
 		set
 		{
 			_waveNo = value;
-			foreach(EnemySpawner sp in FindObjectsOfType<EnemySpawner>()) sp.StartCoroutine("Spawn");
+			foreach(EnemySpawner sp in FindObjectsOfType<EnemySpawner>()) sp.StartCoroutine(sp.Spawn());
 		}
 	}
 
@@ -26,7 +25,8 @@ public class EnemySpawner : MonoBehaviour
 		{
 			EnemyAI enemyStats = enemy.GetComponentInChildren<EnemyAI>();
 			healthPool += enemyStats.health;
-			Instantiate(enemy, transform.position, Quaternion.identity);
+			GameObject e = Instantiate(enemy, transform.position, Quaternion.identity);
+			e.name = enemy.name;
 			yield return new WaitForSeconds(Mathf.Max(spawnIntervalOverride, enemyStats.spawnInterval));
 		}
 		yield return new WaitForSeconds(wavegen.CooldownTime(waveNo, healthPool));

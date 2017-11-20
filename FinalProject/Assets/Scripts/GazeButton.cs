@@ -31,7 +31,10 @@ public sealed class GazeButton : MonoBehaviour
 				if (seeThroughWalls)
 				{
 					Debug.DrawRay(transform.position, observer.position, Color.yellow);
-					if (!glancing) OnGlance.Invoke();
+					if (!glancing)
+					{
+						OnGlance.Invoke ();
+					}
 					else
 					{
 						StareTime += Time.deltaTime;
@@ -44,7 +47,7 @@ public sealed class GazeButton : MonoBehaviour
 					RaycastHit rayHit = new RaycastHit();
 					if (Physics.Raycast(new Ray(observer.position, fromCameraToButton.normalized), out rayHit) && rayHit.transform == transform)
 					{
-						Debug.DrawRay(transform.position, observer.position, Color.yellow);
+						Debug.DrawRay(transform.position, observer.position, Color.green);
 						if (!glancing) OnGlance.Invoke();
 						else
 						{
