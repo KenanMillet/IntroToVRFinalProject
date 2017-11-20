@@ -15,4 +15,4 @@ MonoBehaviour:
   damage: 2
   hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
   model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  baseColor: {r: 1, g: 0, b: 0, a: 1}
+  baseColor: {r: 1, g: 0, b: 0, a: 0.627451}
