@@ -7,11 +7,14 @@ public class PoisonBombProjectile : ProjectileType {
 
     [Range(0.1f, 20f)] public float lifeSpan;
     [Range(0f, 10f)] public float frequency;
+    [Range(0f, 10f)] public float delayTime;
     public LayerMask enemyTypes;
 
     public override IEnumerator Die(Projectile proj, Collision coll)
     {
+        yield return new WaitForSeconds(delayTime);
         float startTime = Time.time;
+        proj.rbody.constraints = RigidbodyConstraints.FreezeAll;
         while(Time.time - startTime < lifeSpan)
         {
             Collider[] enemyColls = Physics.OverlapSphere(proj.transform.position, radius, enemyTypes);

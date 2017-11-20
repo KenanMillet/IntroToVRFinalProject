@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Crystal.ma
-//Last modified: Mon, Nov 20, 2017 04:27:57 PM
+//Last modified: Mon, Nov 20, 2017 05:05:09 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -14,13 +14,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "9A6BD883-4E90-546A-C7A9-9E9B380E1499";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.4655334186593962 2.0953696891464686 2.3247639107055598 ;
-	setAttr ".r" -type "double3" -32.738352755815768 -676.19999999987738 4.4066638166665395e-15 ;
+	setAttr ".t" -type "double3" 1.9529972832093556 3.7708821037950062 7.2978903601913698 ;
+	setAttr ".r" -type "double3" -26.738352755773761 -706.19999999996912 -4.093865734200899e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "911AC103-4BEA-CD48-0975-6DB85BDFFD2C";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 4.0040433386374907;
+	setAttr ".coi" 8.5369386960220659;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
