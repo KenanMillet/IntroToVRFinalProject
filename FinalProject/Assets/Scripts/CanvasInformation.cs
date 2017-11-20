@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class CanvasInformation : MonoBehaviour
 {
+	public Material textMaterial;
+
 	public bool lookedAtBefore { get; set; }
 
 	public Text nameOfObject;
@@ -84,6 +86,8 @@ public class CanvasInformation : MonoBehaviour
 		theText.alignment = TextAnchor.MiddleCenter;
 		theText.verticalOverflow = VerticalWrapMode.Overflow;
 		theText.horizontalOverflow = HorizontalWrapMode.Overflow;
+		theText.material = textMaterial;
+		//theText.color = new Color(
 	}
 
 }

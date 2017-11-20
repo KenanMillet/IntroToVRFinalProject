@@ -290,7 +290,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253789394266598}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 10, y: 0, z: 4}
+  m_LocalPosition: {x: -0.59902066, y: -0.002, z: 1.9651891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4497389276614544}
@@ -599,6 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c12fb893ef2c9f4985f6f71fe419838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMaterial: {fileID: 2100000, guid: 64ecf97632a6d0744b02ba155073b9cf, type: 2}
   nameOfObject: {fileID: 114222621853691720}
   player: {fileID: 0}
 --- !u!114 &114222621853691720
@@ -612,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 64ecf97632a6d0744b02ba155073b9cf, type: 2}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:

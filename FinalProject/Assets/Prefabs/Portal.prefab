@@ -674,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c12fb893ef2c9f4985f6f71fe419838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMaterial: {fileID: 2100000, guid: 64ecf97632a6d0744b02ba155073b9cf, type: 2}
   nameOfObject: {fileID: 114603881050355752}
   player: {fileID: 0}
 --- !u!114 &114603881050355752
@@ -687,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 64ecf97632a6d0744b02ba155073b9cf, type: 2}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
