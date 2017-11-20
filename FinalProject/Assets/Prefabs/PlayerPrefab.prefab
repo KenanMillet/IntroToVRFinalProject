@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114144639678033538}
   - component: {fileID: 114981253700510376}
   - component: {fileID: 114110265756789066}
+  - component: {fileID: 114720878655717946}
   m_Layer: 0
   m_Name: FallbackObjects
   m_TagString: Untagged
@@ -457,7 +458,8 @@ GameObject:
   - component: {fileID: 124396622302948698}
   - component: {fileID: 114676049642533548}
   - component: {fileID: 114741166177221258}
-  - component: {fileID: 114448040352462874}
+  - component: {fileID: 114950890642981826}
+  - component: {fileID: 114165726567625152}
   m_Layer: 0
   m_Name: VRCamera
   m_TagString: MainCamera
@@ -1180,6 +1182,18 @@ MonoBehaviour:
   speed: 4
   shiftSpeed: 16
   showInstructions: 1
+--- !u!114 &114165726567625152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992707814521024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e2854291dce1ad249aedd589eef9f262, type: 2}
 --- !u!114 &114222339348714354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1296,20 +1310,6 @@ MonoBehaviour:
   menuOffset: 40
   scaleLimits: {x: 0.1, y: 5}
   scaleRate: 0.5
---- !u!114 &114448040352462874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992707814521024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 4514587750709450}
-  _ears: {fileID: 0}
-  wireframe: 0
 --- !u!114 &114480068136413056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1403,6 +1403,18 @@ MonoBehaviour:
   throwPowerOffset: 1
   originMaterial: {fileID: 0}
   highlightMaterial: {fileID: 2100000, guid: 273431647b8971440930c213083dabce, type: 2}
+--- !u!114 &114720878655717946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006324686426718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e2854291dce1ad249aedd589eef9f262, type: 2}
 --- !u!114 &114741166177221258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1531,6 +1543,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highLightMaterial: {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
   fireHapticsOnHightlight: 1
+--- !u!114 &114950890642981826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992707814521024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 4514587750709450}
+  _ears: {fileID: 0}
+  wireframe: 0
 --- !u!114 &114961539082489610
 MonoBehaviour:
   m_ObjectHideFlags: 1
