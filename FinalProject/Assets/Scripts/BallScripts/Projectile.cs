@@ -67,6 +67,7 @@ public class Projectile : MonoBehaviour
     public void Die()
     {
         Transform newHitFX = Instantiate(hitEffect, transform.position, transform.rotation);
+        Destroy(newHitFX.gameObject, 2f);
         // Deregister from spawner
         Destroy(gameObject);
     }
