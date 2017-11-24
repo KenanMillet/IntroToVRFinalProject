@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109099a302722864a969b7c1cdd3d12d, type: 3}
   m_Name: Poison Projectile
   m_EditorClassIdentifier: 
-  radius: 4
+  radius: 2
   damage: 1
   hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
   model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   baseColor: {r: 0.4482758, g: 1, b: 0, a: 0.627451}
-  lifeSpan: 10
+  lifeSpan: 5
   frequency: 2
   delayTime: 2
   enemyTypes:
