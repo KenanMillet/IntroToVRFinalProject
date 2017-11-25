@@ -6,6 +6,7 @@ public class FreezeEffect : MonoBehaviour {
 
     public float duration;
     float startTime;
+	public float speedMod;
 
     List<EnemyAI> losers = new List<EnemyAI>();
 
@@ -19,16 +20,18 @@ public class FreezeEffect : MonoBehaviour {
 
 	void OnTriggerEnter(Collider coll)
     {
+		Debug.Log(coll.name + " entered the cold AoE.");
         EnemyAI enem = coll.GetComponent<EnemyAI>();
         if (enem) {
-            enem.Speed = enem.originSpeed / 2;
+            enem.Speed = enem.originSpeed * speedMod;
             losers.Add(enem);
         }
     }
 
     void OnTriggerExit(Collider coll)
     {
-        EnemyAI enem = coll.GetComponent<EnemyAI>();
+		Debug.Log(coll.name + " exited the cold AoE.");
+		EnemyAI enem = coll.GetComponent<EnemyAI>();
         if (enem && losers.Contains(enem)) {
             enem.Speed = enem.originSpeed;
             losers.Remove(enem);
@@ -43,7 +46,8 @@ public class FreezeEffect : MonoBehaviour {
         losers.Clear();
         ParticleSystem[] partSys = GetComponentsInChildren<ParticleSystem>();
         foreach(ParticleSystem part in partSys) { part.Stop(); }
-        yield return new WaitForSeconds(1f);
+		GetComponent<SphereCollider>().radius = 0;
+		yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }
