@@ -256,7 +256,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  spawnInterval: 1
+  spawnInterval: 2
 --- !u!114 &114906814412742978
 MonoBehaviour:
   m_ObjectHideFlags: 1
