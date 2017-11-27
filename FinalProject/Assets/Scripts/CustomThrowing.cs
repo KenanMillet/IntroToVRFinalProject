@@ -13,6 +13,8 @@ public class CustomThrowing : MonoBehaviour {
     public Material originMaterial; // the held object's original material
     public Material highlightMaterial; // the material when the object is held
 
+    public Collider mycoll;
+
     // Use this for initialization
     void Start () {
         hand = GetComponent<Hand>();
