@@ -6,6 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
 	public float spawnIntervalOverride = 0;
 
+	
+
 	private static int _waveNo;
 	public static int waveNo
 	{
@@ -19,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
 
 	IEnumerator Spawn()
 	{
+		int currentWave = waveNo;
 		ProceduralSpawnScript wavegen = GetComponent<ProceduralSpawnScript>();
 		float healthPool = 0;
 		foreach (GameObject enemy in wavegen.Wave(waveNo))
@@ -33,6 +36,6 @@ public class EnemySpawner : MonoBehaviour
 			yield return new WaitForSeconds(Mathf.Max(spawnIntervalOverride, enemyStats.spawnInterval));
 		}
 		yield return new WaitForSeconds(wavegen.CooldownTime(waveNo, healthPool));
-		++waveNo;
+		if (currentWave == waveNo) ++waveNo;
 	}
 }
