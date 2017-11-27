@@ -256,7 +256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c12fb893ef2c9f4985f6f71fe419838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMaterial: {fileID: 2100000, guid: 64ecf97632a6d0744b02ba155073b9cf, type: 2}
   nameOfObject: {fileID: 114195769220860178}
   player: {fileID: 1776230317225650, guid: 2f85d59e98c0c2a409a02f70f36a025a, type: 2}
 --- !u!114 &114306126179934082
@@ -427,7 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebae3757ffb1b34459bfb413118d9cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originSpeed: 2
   Speed: 2
   MaxHealth: 1
   Group: 0
@@ -460,7 +458,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  spawnInterval: 0.33333334
+  spawnInterval: 0.75
 --- !u!114 &114948519149500406
 MonoBehaviour:
   m_ObjectHideFlags: 1
