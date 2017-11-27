@@ -15,10 +15,5 @@ public class DefeatScript : MonoBehaviour {
 	void Update () {
         defeatText.text = "Super Space\nTower Defense\n\nHigh Score: " + GameManager.highScore + "\nScore: " + GameManager.score;
 
-
-		if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(0);
-        }
     }
 }
