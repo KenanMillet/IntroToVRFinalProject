@@ -1,38 +1,15 @@
 fileFormatVersion: 2
-guid: 7681beaba79eb244aa1ecc44f41e3e3e
-timeCreated: 1511640090
+guid: f724617a3f4d3314390cd0c8d19dc9c3
+timeCreated: 1511818119
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: PA_Drone
-    100004: PA_DroneBladeLeft
-    100006: PA_DroneBladeRight
-    100008: PA_DroneWingLeft
-    100010: PA_DroneWingRight
     400000: //RootNode
-    400002: PA_Drone
-    400004: PA_DroneBladeLeft
-    400006: PA_DroneBladeRight
-    400008: PA_DroneWingLeft
-    400010: PA_DroneWingRight
-    2300000: PA_Drone
-    2300002: PA_DroneBladeLeft
-    2300004: PA_DroneBladeRight
-    2300006: PA_DroneWingLeft
-    2300008: PA_DroneWingRight
-    3300000: PA_Drone
-    3300002: PA_DroneBladeLeft
-    3300004: PA_DroneBladeRight
-    3300006: PA_DroneWingLeft
-    3300008: PA_DroneWingRight
-    4300000: PA_Drone
-    4300002: PA_DroneWingLeft
-    4300004: PA_DroneBladeLeft
-    4300006: PA_DroneWingRight
-    4300008: PA_DroneBladeRight
-    7400000: Take 001
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: ExplodyCrystal
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -61,7 +38,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 120
+    globalScale: 8
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
