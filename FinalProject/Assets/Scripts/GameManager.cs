@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,22 +23,19 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
-        scoreMult = 1;
-        lives = maxLives;
-        consecutiveKills = 0;
-        score = 0;
-        RefreshPathPoints();
-		EnemySpawner.waveNo = 1;
+		DontDestroyOnLoad(this);
 	}
 
-	void Update () {
+	void Update ()
+	{
 		if (instance == null) instance = this;
 		else if (instance != this) Destroy(gameObject);
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-			StartGame();
-        }
+			if(state == State.GAME) EndGame();
+			else if(state == State.MENU) StartGame();
+		}
 
         if(consecutiveKills >= 3)
         {
@@ -49,9 +47,7 @@ public class GameManager : MonoBehaviour
         if (lives <= 0)
         {
             Debug.Log("Lives depleted, restarting.");
-            if (highScore < score) highScore = score;
-            SceneManager.LoadScene("LoseScreen");
-            
+			EndGame();
         }
 	}
 
@@ -77,23 +73,26 @@ public class GameManager : MonoBehaviour
 
     public static void EndGame()
     {
-		SceneManager.LoadScene("LoseScreen");
 		if (highScore < score) highScore = score;
-		scoreMult = 1;
-		lives = maxLives;
-		consecutiveKills = 0;
-		score = 0;
+		state = State.MENU;
+		SceneManager.LoadScene("Menu");
 	}
 
 	public static void StartGame()
 	{
-		SceneManager.LoadScene("Main");
-		RefreshPathPoints();
-		EnemySpawner.waveNo = 1;
 		scoreMult = 1;
-		lives = 10;
+		lives = maxLives;
 		consecutiveKills = 0;
 		score = 0;
 		state = State.GAME;
+		SceneManager.LoadScene("Main");
+		RefreshPathPoints();
+		instance.StartCoroutine(instance.WaitThenStart());
+	}
+
+	IEnumerator WaitThenStart()
+	{
+		yield return new WaitForSeconds(1);
+		EnemySpawner.waveNo = 1;
 	}
 }
