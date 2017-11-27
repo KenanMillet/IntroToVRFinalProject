@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    public float originSpeed;
+	[HideInInspector]
 	public float Speed;
 	[SerializeField]
 	protected float MaxHealth;
@@ -57,6 +59,7 @@ public class EnemyAI : MonoBehaviour
 
 	protected void Start ()
 	{
+        Speed = originSpeed;
 		health = MaxHealth;
 		index = 0;
 		if (path.Count < 2) dying = true;

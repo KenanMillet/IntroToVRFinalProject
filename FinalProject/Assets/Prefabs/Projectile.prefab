@@ -115,11 +115,13 @@ MonoBehaviour:
   hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
   respawnEffect: {fileID: 54115225654853568, guid: bb81c56665697704dbaf7fe54b48a57e,
     type: 2}
-  respawnTime: 0
-  originPos: {x: 0, y: 0, z: 0}
+  _blueprint: {fileID: 0}
+  spawner: {fileID: 0}
   rbody: {fileID: 0}
   myColl: {fileID: 0}
   myRend: {fileID: 0}
+  damage: 0
+  holstered: 1
 --- !u!114 &114227523628165814
 MonoBehaviour:
   m_ObjectHideFlags: 1

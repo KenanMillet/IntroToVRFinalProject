@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
     public static float scoreMult = 1;
 	public static int maxLives = 15;
     public static int lives = 15;
@@ -11,6 +11,14 @@ public class GameManager : MonoBehaviour {
     public static int highScore;
     public static int consecutiveKills = 0;
 	public static Dictionary<int, List<PathPoint>> paths = new Dictionary<int, List<PathPoint>>();
+	private static GameManager instance;
+
+	public enum State
+	{
+		MENU,
+		GAME
+	};
+	static State state = State.MENU;
 
 	private void Awake()
 	{
@@ -23,6 +31,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update () {
+		if (instance == null) instance = this;
+		else if (instance != this) Destroy(gameObject);
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             Restart();
@@ -65,7 +76,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-    public static void Restart()
+    public static void EndGame()
     {
         if (highScore < score) highScore = score;
         scoreMult = 1;
@@ -73,5 +84,17 @@ public class GameManager : MonoBehaviour {
         consecutiveKills = 0;
         score = 0;
 		SceneManager.LoadScene(0);
+	}
+
+	public static void StartGame()
+	{
+		RefreshPathPoints();
+		EnemySpawner.waveNo = 1;
+		scoreMult = 1;
+		lives = 10;
+		consecutiveKills = 0;
+		score = 0;
+		state = State.GAME;
+		SceneManager.LoadScene("Main");
 	}
 }
