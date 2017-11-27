@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
     public static void EndGame()
     {
 		if (highScore < score) highScore = score;
+		lives = maxLives;
 		state = State.MENU;
 		SceneManager.LoadScene("Menu");
 	}
