@@ -5,28 +5,34 @@ public class BallSpawner : MonoBehaviour
 {
 	public BallSpawnerGroup group;
 	public Projectile baseThrowable;
-	public ProjectileType currentThrowable { get; private set; }
 	public float delay;
+	private float elapsed;
 
 	void Start ()
 	{
 		float tmp = delay;
 		delay = 0;
-		Spawn();
 		delay = tmp;
+		elapsed = 0;
+	}
+
+	private void Update()
+	{
+		if (!GetComponentInChildren<Projectile>())
+		{
+			elapsed += Time.deltaTime;
+		}
+		if (elapsed >= delay)
+		{
+			Spawn();
+			elapsed = 0;
+		}
 	}
 
 	public void Spawn()
 	{
-		StartCoroutine(DelayThenSpawn());
-	}
-
-	IEnumerator DelayThenSpawn()
-	{
-		yield return new WaitForSeconds(delay);
-		Projectile p = Instantiate(baseThrowable, transform.position, transform.rotation);
+		Projectile p = Instantiate(baseThrowable, transform.position, transform.rotation, transform);
 		p.blueprint = group.Next();
 		p.spawner = this;
-		currentThrowable = p.blueprint;
 	}
 }
