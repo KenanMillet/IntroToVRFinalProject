@@ -23,6 +23,14 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
+		if (!PlayerPrefs.HasKey ("highscore")) {
+			PlayerPrefs.SetInt ("highscore", 0);
+			PlayerPrefs.Save ();
+		} else {
+			Debug.Log ("hi " + highScore);
+			highScore = PlayerPrefs.GetInt ("highscore");
+		}
+
 		DontDestroyOnLoad(this);
 	}
 
@@ -73,7 +81,11 @@ public class GameManager : MonoBehaviour
 
     public static void EndGame()
     {
-		if (highScore < score) highScore = score;
+		if (highScore < score) {
+			highScore = score;
+			PlayerPrefs.SetInt ("highscore", highScore);
+			PlayerPrefs.Save ();
+		}
 		lives = maxLives;
 		state = State.MENU;
 		SceneManager.LoadScene("Menu");
