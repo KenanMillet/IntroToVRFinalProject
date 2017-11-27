@@ -6,6 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
 	public float spawnIntervalOverride = 0;
 
+	
+
 	private static int _waveNo;
 	public static int waveNo
 	{
@@ -19,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
 
 	IEnumerator Spawn()
 	{
+		int currentWave = waveNo;
 		ProceduralSpawnScript wavegen = GetComponent<ProceduralSpawnScript>();
 		float healthPool = 0;
 		foreach (GameObject enemy in wavegen.Wave(waveNo))
@@ -27,9 +30,12 @@ public class EnemySpawner : MonoBehaviour
 			healthPool += enemyStats.health;
 			GameObject e = Instantiate(enemy, transform.position, Quaternion.identity);
 			e.name = enemy.name;
+            //increment enemy speed depending on wave
+            //TODO: make speed increase vary depending on enemy type
+            e.GetComponentInChildren<EnemyAI>().Speed += Mathf.Min(3, Mathf.Floor(_waveNo/3));
 			yield return new WaitForSeconds(Mathf.Max(spawnIntervalOverride, enemyStats.spawnInterval));
 		}
 		yield return new WaitForSeconds(wavegen.CooldownTime(waveNo, healthPool));
-		++waveNo;
+		if (currentWave == waveNo) ++waveNo;
 	}
 }
