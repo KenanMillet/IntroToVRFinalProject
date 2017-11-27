@@ -15,7 +15,7 @@ public class FirstProceduralSpawnScript : ProceduralSpawnScript {
     {
         //proceduralVal is calculated as a value added to a variable dependent on the current wave
         //and represents the total health pool alotted to a given wave
-        int proceduralVal = 20 + Random.Range((waveNo - 3) * 2, (waveNo - 3) * 4);
+        int proceduralVal = 20 + Random.Range((waveNo - 3), (waveNo - 3) * 3);
         int enemiesToSpawn = waveNo > 3 ? proceduralVal : 1 + (waveNo * 2);
         List<GameObject> wave = null;
 
