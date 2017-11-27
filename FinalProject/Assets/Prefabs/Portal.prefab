@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f4b8e99351bec4192f39d383437b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FOV: 30
+  FOV: 45
   seeThroughWalls: 1
   OnGlance:
     m_PersistentCalls:
