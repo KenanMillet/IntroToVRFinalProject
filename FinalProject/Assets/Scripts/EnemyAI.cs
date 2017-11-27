@@ -71,7 +71,8 @@ public class EnemyAI : MonoBehaviour
 		if (!dying)
 		{
             if (segment.magnitude > Vector3.Distance(transform.parent.position, path[index].transform.position)) {
-                transform.LookAt(path[index].transform);
+                Quaternion forward = Quaternion.LookRotation(path[index + 1].transform.position - transform.parent.position);
+                transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation, forward, Time.deltaTime * 2);
                 transform.parent.position += segment.normalized * Speed * Time.deltaTime;
             }
             else
