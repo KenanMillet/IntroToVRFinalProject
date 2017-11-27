@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static float scoreMult = 1;
-	public static int maxLives = 10;
-    public static int lives = 10;
+	public static int maxLives = 15;
+    public static int lives = 15;
     public static int score = 0;
     public static int highScore;
     public static int consecutiveKills = 0;
@@ -14,7 +14,11 @@ public class GameManager : MonoBehaviour {
 
 	private void Awake()
 	{
-		RefreshPathPoints();
+        scoreMult = 1;
+        lives = maxLives;
+        consecutiveKills = 0;
+        score = 0;
+        RefreshPathPoints();
 		EnemySpawner.waveNo = 1;
 	}
 
@@ -22,6 +26,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R))
         {
             Restart();
+            
         }
 
         if(consecutiveKills >= 3)
@@ -34,7 +39,9 @@ public class GameManager : MonoBehaviour {
         if (lives <= 0)
         {
             Debug.Log("Lives depleted, restarting.");
-            Restart();
+            if (highScore < score) highScore = score;
+            SceneManager.LoadScene(1);
+            
         }
 	}
 
@@ -62,9 +69,9 @@ public class GameManager : MonoBehaviour {
     {
         if (highScore < score) highScore = score;
         scoreMult = 1;
-        lives = 10;
+        lives = maxLives;
         consecutiveKills = 0;
         score = 0;
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		SceneManager.LoadScene(0);
 	}
 }
