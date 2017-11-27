@@ -1153,7 +1153,7 @@ MonoBehaviour:
   group: {fileID: 114296002361651568}
   baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
     type: 2}
-  delay: 0.33
+  delay: 1.5
 --- !u!114 &114187772711444620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   group: {fileID: 114296002361651568}
   baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
     type: 2}
-  delay: 0.33
+  delay: 1.5
 --- !u!114 &114247096463925742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1248,7 +1248,7 @@ MonoBehaviour:
   group: {fileID: 114296002361651568}
   baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
     type: 2}
-  delay: 0.33
+  delay: 1.5
 --- !u!114 &114296002361651568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   group: {fileID: 114296002361651568}
   baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
     type: 2}
-  delay: 0.33
+  delay: 1.5
 --- !u!114 &114311958737411624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1298,7 +1298,7 @@ MonoBehaviour:
   group: {fileID: 114296002361651568}
   baseThrowable: {fileID: 114078046852325388, guid: bb15736f042d2e64ab5ac945837b3675,
     type: 2}
-  delay: 0.33
+  delay: 1.5
 --- !u!114 &114349153304525982
 MonoBehaviour:
   m_ObjectHideFlags: 1

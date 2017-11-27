@@ -1,27 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
     public static float scoreMult = 1;
-	public static int maxLives = 10;
-    public static int lives = 10;
+	public static int maxLives = 15;
+    public static int lives = 15;
     public static int score = 0;
     public static int highScore;
     public static int consecutiveKills = 0;
 	public static Dictionary<int, List<PathPoint>> paths = new Dictionary<int, List<PathPoint>>();
+	private static GameManager instance;
+
+	public enum State
+	{
+		MENU,
+		GAME
+	};
+	static State state = State.MENU;
 
 	private void Awake()
 	{
-		RefreshPathPoints();
+        scoreMult = 1;
+        lives = maxLives;
+        consecutiveKills = 0;
+        score = 0;
+        RefreshPathPoints();
 		EnemySpawner.waveNo = 1;
 	}
 
 	void Update () {
+		if (instance == null) instance = this;
+		else if (instance != this) Destroy(gameObject);
+
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Restart();
+			StartGame();
         }
 
         if(consecutiveKills >= 3)
@@ -34,7 +49,9 @@ public class GameManager : MonoBehaviour {
         if (lives <= 0)
         {
             Debug.Log("Lives depleted, restarting.");
-            Restart();
+            if (highScore < score) highScore = score;
+            SceneManager.LoadScene("LoseScreen");
+            
         }
 	}
 
@@ -58,13 +75,25 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-    public static void Restart()
+    public static void EndGame()
     {
-        if (highScore < score) highScore = score;
-        scoreMult = 1;
-        lives = 10;
-        consecutiveKills = 0;
-        score = 0;
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		SceneManager.LoadScene("LoseScreen");
+		if (highScore < score) highScore = score;
+		scoreMult = 1;
+		lives = maxLives;
+		consecutiveKills = 0;
+		score = 0;
+	}
+
+	public static void StartGame()
+	{
+		SceneManager.LoadScene("Main");
+		RefreshPathPoints();
+		EnemySpawner.waveNo = 1;
+		scoreMult = 1;
+		lives = 10;
+		consecutiveKills = 0;
+		score = 0;
+		state = State.GAME;
 	}
 }

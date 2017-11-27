@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float originSpeed;
+	[HideInInspector]
 	public float Speed;
 	[SerializeField]
 	protected float MaxHealth;
@@ -11,7 +12,7 @@ public class EnemyAI : MonoBehaviour
 	protected int Group;
 	[SerializeField]
 	protected Gradient healthColors;
-	public float spawnInterval;
+    public float spawnInterval;
 
 	private float _health;
 	public float health
@@ -146,14 +147,14 @@ public class EnemyAI : MonoBehaviour
         if (reachedEnd)
         {
             Debug.Log(transform.parent.name + " reached the end");
-            GameManager.lives--;
+            GameManager.lives -= (int)_health;
             GameManager.consecutiveKills = 0;
             Debug.Log("Lives remaining: " + GameManager.lives);
         }
         else
         {
             Debug.Log(transform.parent.name + " was killed");
-            GameManager.score += (int)(10 * GameManager.scoreMult);
+            GameManager.score += (int)(this.MaxHealth * 10 * GameManager.scoreMult);
             GameManager.consecutiveKills++;
             Debug.Log("Score is now: " + GameManager.score);
         }
