@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
 			e.name = enemy.name;
             //increment enemy speed depending on wave
             //TODO: make speed increase vary depending on enemy type
-            e.GetComponent<EnemyAI>().Speed += Mathf.Min(3, Mathf.Floor(_waveNo/3));
+            e.GetComponentInChildren<EnemyAI>().Speed += Mathf.Min(3, Mathf.Floor(_waveNo/3));
 			yield return new WaitForSeconds(Mathf.Max(spawnIntervalOverride, enemyStats.spawnInterval));
 		}
 		yield return new WaitForSeconds(wavegen.CooldownTime(waveNo, healthPool));
