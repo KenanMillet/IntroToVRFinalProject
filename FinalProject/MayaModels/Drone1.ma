@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Drone1.ma
-//Last modified: Mon, Nov 27, 2017 04:46:57 PM
+//Last modified: Mon, Nov 27, 2017 05:44:33 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -14,13 +14,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "BEAC5174-4743-391A-1180-909A09770164";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.0522725469767717 1.8549766455535739 3.3077075349609637 ;
+	setAttr ".t" -type "double3" 0.77149521247671815 1.3711683493323021 2.3893262552026004 ;
 	setAttr ".r" -type "double3" -26.738352729445218 -702.99999999996282 1.6629399057318335e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C3302CA3-4CBD-E02F-7CB2-9E89331E7E11";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 4.1155833302888931;
+	setAttr ".coi" 3.0402552156782456;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -87,8 +87,8 @@ createNode transform -n "PA_DroneCtrl";
 	addAttr -is true -ci true -k true -sn "bodyRotateLR" -ln "bodyRotateLR" -smn 0 -smx 
 		0 -at "double";
 	addAttr -is true -ci true -k true -sn "bodySpin" -ln "bodySpin" -smn 0 -smx 0 -at "double";
-	setAttr ".rp" -type "double3" 0 -1.9721522630525295e-31 3.5527136788005009e-15 ;
-	setAttr ".sp" -type "double3" 0 -1.9721522630525295e-31 3.5527136788005009e-15 ;
+	setAttr ".rp" -type "double3" 0 0.017231416809775801 3.524958103184872e-15 ;
+	setAttr ".sp" -type "double3" 0 0.017231416809775801 3.524958103184872e-15 ;
 	setAttr -k on ".leftWingUD";
 	setAttr -k on ".leftWingRotate";
 	setAttr -k on ".rightWingUD";
@@ -120,8 +120,9 @@ createNode transform -n "PA_Drone" -p "PA_DroneCtrl";
 	setAttr ".t" -type "double3" 0.0024691341254738375 -0.036373175033280317 0.027732044458389282 ;
 	setAttr ".r" -type "double3" 14.999999999999998 0 0 ;
 	setAttr -av ".rx";
-	setAttr ".rp" -type "double3" -0.0024691341254738375 0.036373175033280317 -0.027732044458389282 ;
-	setAttr ".sp" -type "double3" -0.0024691341254738375 0.036373175033280317 -0.027732044458389282 ;
+	setAttr ".rp" -type "double3" -0.0024691341254738375 0.054212450411159074 -0.027732044458389282 ;
+	setAttr ".rpt" -type "double3" 0 -0.00060785856810298671 0.0046171442186234892 ;
+	setAttr ".sp" -type "double3" -0.0024691341254738375 0.054212450411159074 -0.027732044458389282 ;
 createNode mesh -n "PA_DroneShape" -p "PA_Drone";
 	rename -uid "0C1083DC-4DDC-6447-6D53-B784BFFAAEF0";
 	setAttr -k off ".v";
@@ -1887,8 +1888,9 @@ createNode transform -n "PA_DroneWingLeft" -p "PA_Drone";
 	setAttr ".t" -type "double3" -0.010179280824189868 0.022466478031723372 -0.26650141222954093 ;
 	setAttr ".r" -type "double3" 45.000000000000007 0 0 ;
 	setAttr -av ".rx";
-	setAttr ".rp" -type "double3" -0.044758987426757817 -0.022895681295255411 0.015220970218109361 ;
-	setAttr ".sp" -type "double3" -0.044758987426757817 -0.022895681295255411 0.015220970218109361 ;
+	setAttr ".rp" -type "double3" -0.20078736543655396 0.026733994483947754 0.016881048679351807 ;
+	setAttr ".rpt" -type "double3" 0 -0.015710048224885125 0.034607254567568135 ;
+	setAttr ".sp" -type "double3" -0.20078736543655396 0.026733994483947754 0.016881048679351807 ;
 createNode mesh -n "PA_DroneWingLeftShape" -p "PA_DroneWingLeft";
 	rename -uid "CFB752E7-452C-ED84-2FBE-38B6302B581D";
 	setAttr -k off ".v";
@@ -2527,8 +2529,9 @@ createNode transform -n "PA_DroneWingRight" -p "PA_Drone";
 	setAttr ".t" -type "double3" 0.0052410125732421792 0.022895681295255411 -0.26522097021810936 ;
 	setAttr ".r" -type "double3" 45.000000000000007 0 0 ;
 	setAttr -av ".rx";
-	setAttr ".rp" -type "double3" 0.044758987426757817 -0.022895681295255411 0.015220970218109361 ;
-	setAttr ".sp" -type "double3" 0.044758987426757817 -0.022895681295255411 0.015220970218109361 ;
+	setAttr ".rp" -type "double3" 0.20078736543655396 0.026733994483947754 0.016881048679351807 ;
+	setAttr ".rpt" -type "double3" 0 -0.015710048224885125 0.034607254567568135 ;
+	setAttr ".sp" -type "double3" 0.20078736543655396 0.026733994483947754 0.016881048679351807 ;
 createNode mesh -n "PA_DroneWingRightShape" -p "PA_DroneWingRight";
 	rename -uid "DBCDCBFE-4CD5-20BE-573F-58AC811D69D3";
 	setAttr -k off ".v";

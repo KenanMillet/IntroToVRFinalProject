@@ -41,26 +41,12 @@ public class Projectile : MonoBehaviour
     {
         if (transform.position.y < -10f)
         {
-            Die();
+			Die();
         }
-    }
-
-    void HandHoverUpdate(Hand hand)
-    {
-        if (hand.GetStandardInteractionButtonDown())
-        {
-
-        }
-    }
-
-    void OnHandHoverEnd(Hand hand)
-    {
-        // Debug.Log("Exit");
     }
 
     void OnCollisionEnter(Collision coll)
     {
-        Debug.Log("Doing it.");
         StartCoroutine(blueprint.Die(this, coll));
     }
 
@@ -68,7 +54,6 @@ public class Projectile : MonoBehaviour
     {
         Transform newHitFX = Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(newHitFX.gameObject, 2f);
-        // Deregister from spawner
         Destroy(gameObject);
     }
 
