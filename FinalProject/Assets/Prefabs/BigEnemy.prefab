@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 95318059231369362}
   - component: {fileID: 114178462349488530}
   - component: {fileID: 114096344010056752}
+  - component: {fileID: 64224699097772758}
   m_Layer: 0
   m_Name: Drone2
   m_TagString: Untagged
@@ -145,7 +146,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 5646323fd30b41b4ea54c3422a0f2dee, type: 2}
   - {fileID: 2100000, guid: fb98345886d08ae4fb2164daa349e8bc, type: 2}
   - {fileID: 2100000, guid: e2b880f6849275b4392e807d22272a6c, type: 2}
-  - {fileID: 2100000, guid: d41d42946a117cf48bd7fcaf90493a23, type: 2}
+  - {fileID: 2100000, guid: b9c774c289ac4cb4c81eea42c2a82c1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -170,6 +171,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1670653010342700}
+  m_Mesh: {fileID: 4300044, guid: b96ecbf233302344aa60a7d1d9191147, type: 3}
+--- !u!64 &64224699097772758
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670653010342700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300044, guid: b96ecbf233302344aa60a7d1d9191147, type: 3}
 --- !u!95 &95318059231369362
 Animator:
@@ -204,8 +219,8 @@ MonoBehaviour:
   OnGlance:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1251394849960730}
-        m_MethodName: 
+      - m_Target: {fileID: 223477222572645328}
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -220,8 +235,8 @@ MonoBehaviour:
   OnStare:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1251394849960730}
-        m_MethodName: 
+      - m_Target: {fileID: 114762812217057390}
+        m_MethodName: doABunchOfUpdating
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -236,8 +251,8 @@ MonoBehaviour:
   OnAvert:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1251394849960730}
-        m_MethodName: 
+      - m_Target: {fileID: 223477222572645328}
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -266,7 +281,7 @@ MonoBehaviour:
   Group: 0
   healthColors:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
     key1: {r: 0, g: 0, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -294,7 +309,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   spawnInterval: 3.5
-  root: {fileID: 0}
+  root: {fileID: 4402830979934626}
 --- !u!114 &114205427317858766
 MonoBehaviour:
   m_ObjectHideFlags: 1
