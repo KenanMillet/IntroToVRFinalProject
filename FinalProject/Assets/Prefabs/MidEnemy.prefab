@@ -260,6 +260,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   spawnInterval: 2
+  root: {fileID: 4107182546405146}
 --- !u!114 &114449282730942616
 MonoBehaviour:
   m_ObjectHideFlags: 1

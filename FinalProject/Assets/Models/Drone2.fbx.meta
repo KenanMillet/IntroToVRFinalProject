@@ -115,6 +115,7 @@ ModelImporter:
     4300038: pCylinder20
     4300040: pCylinder21
     4300042: pCylinder22
+    4300044: Tank
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -407,6 +407,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   spawnInterval: 0.75
+  root: {fileID: 0}
 --- !u!114 &114948519149500406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,7 +451,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1244671440982204}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -507,7 +508,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767479006615574}
-  m_LocalRotation: {x: -0, y: 0.36127838, z: -0, w: 0.93245804}
+  m_LocalRotation: {x: -0, y: 0.36127844, z: -0, w: 0.93245804}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
