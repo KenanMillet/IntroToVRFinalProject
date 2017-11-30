@@ -249,7 +249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Time Left: '
+  m_Text: NEXT WAVE IN
 --- !u!114 &114833791452929662
 MonoBehaviour:
   m_ObjectHideFlags: 1
