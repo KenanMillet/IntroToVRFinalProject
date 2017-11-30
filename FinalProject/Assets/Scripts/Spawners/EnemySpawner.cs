@@ -6,7 +6,9 @@ public class EnemySpawner : MonoBehaviour
 {
 	public float spawnIntervalOverride = 0;
 
-	
+	public static float getTimeLeft{
+		get { return 88; }
+	}
 
 	private static int _waveNo;
 	public static int waveNo

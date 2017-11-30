@@ -11,7 +11,10 @@ public class ProjectileType : ScriptableObject {
 
     public virtual void setup(Projectile proj)
     {
-        proj.GetComponent<MeshFilter>().mesh = model;
+        // proj.GetComponent<MeshFilter>().mesh = model;
+        MeshFilter innerCrystal = proj.transform.Find("InnerCrystal").GetComponent<MeshFilter>();
+        innerCrystal.mesh = model;
+        innerCrystal.GetComponent<MeshRenderer>().material.color = baseColor;
 		proj.GetComponent<Renderer>().material.color = baseColor;
         proj.GetComponent<TrailRenderer>().startColor = baseColor;
     }

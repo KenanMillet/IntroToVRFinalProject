@@ -14,7 +14,7 @@ MonoBehaviour:
   radius: 2
   damage: 1
   hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
-  model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  model: {fileID: 4300000, guid: 755359cb873a0b84297e26f946ee19cd, type: 3}
   baseColor: {r: 0.4482758, g: 1, b: 0, a: 0.627451}
   lifeSpan: 5
   frequency: 2

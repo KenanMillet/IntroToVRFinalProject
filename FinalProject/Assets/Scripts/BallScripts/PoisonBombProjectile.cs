@@ -15,6 +15,7 @@ public class PoisonBombProjectile : ProjectileType {
         yield return new WaitForSeconds(delayTime);
         float startTime = Time.time;
         proj.rbody.constraints = RigidbodyConstraints.FreezeAll;
+        proj.myColl.enabled = false;
         while(Time.time - startTime < lifeSpan)
         {
             Collider[] enemyColls = Physics.OverlapSphere(proj.transform.position, radius, enemyTypes);

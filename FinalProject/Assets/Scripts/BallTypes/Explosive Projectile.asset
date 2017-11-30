@@ -14,7 +14,7 @@ MonoBehaviour:
   radius: 3
   damage: 1
   hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
-  model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  model: {fileID: 4300000, guid: f724617a3f4d3314390cd0c8d19dc9c3, type: 3}
   baseColor: {r: 0.94482756, g: 1, b: 0, a: 0.627451}
   affectedTargets:
     serializedVersion: 2
