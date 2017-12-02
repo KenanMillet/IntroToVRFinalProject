@@ -606,7 +606,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776230317225650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 3, z: 5}
+  m_LocalPosition: {x: -8.5, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4318653166846540}
@@ -1232,6 +1232,7 @@ MonoBehaviour:
   throwPowerOffset: 1
   originMaterial: {fileID: 0}
   highlightMaterial: {fileID: 2100000, guid: 273431647b8971440930c213083dabce, type: 2}
+  mycoll: {fileID: 0}
 --- !u!114 &114360469876779836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1403,6 +1404,7 @@ MonoBehaviour:
   throwPowerOffset: 1
   originMaterial: {fileID: 0}
   highlightMaterial: {fileID: 2100000, guid: 273431647b8971440930c213083dabce, type: 2}
+  mycoll: {fileID: 0}
 --- !u!114 &114720878655717946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1470,6 +1472,7 @@ MonoBehaviour:
   throwPowerOffset: 1
   originMaterial: {fileID: 0}
   highlightMaterial: {fileID: 2100000, guid: 273431647b8971440930c213083dabce, type: 2}
+  mycoll: {fileID: 0}
 --- !u!114 &114802082196912718
 MonoBehaviour:
   m_ObjectHideFlags: 1
