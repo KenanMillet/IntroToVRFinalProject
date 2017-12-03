@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator WaitThenStart()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForFixedUpdate();
 		EnemySpawner.waveNo = 1;
 	}
 }

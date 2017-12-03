@@ -12,7 +12,12 @@ public class TimeScript : MonoBehaviour {
 
 		//lets math
 		int min = (int) (time/60);
-		int sec = (int)(time % 60);
-		transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "NEXT WAVE\n" + min + " : " +sec;
+		int sec = Mathf.CeilToInt(time % 60);
+		if (sec == 60)
+		{
+			++min;
+			sec = 0;
+		}
+		transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "NEXT WAVE\n" + (min < 10 ? "0" : "") + min + " : " + (sec < 10 ? "0" : "") + sec;
 	}
 }

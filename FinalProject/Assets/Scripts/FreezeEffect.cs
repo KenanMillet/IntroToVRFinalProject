@@ -15,7 +15,7 @@ public class FreezeEffect : MonoBehaviour {
     }
 
     void Update() {
-        if(Time.time - startTime >= duration) { StartCoroutine(Die()); }
+        if(Time.time - startTime >= duration) { Die(); }
     }
 
 	void OnTriggerEnter(Collider coll)
@@ -38,7 +38,7 @@ public class FreezeEffect : MonoBehaviour {
         }
     }
 
-    IEnumerator Die() {
+    void Die() {
         GetComponent<Collider>().enabled = false;
         if(losers.Count != 0) {
             for (int i = 0; i < losers.Count; i++) { losers[i].Speed = losers[i].originSpeed; }
@@ -47,7 +47,6 @@ public class FreezeEffect : MonoBehaviour {
         ParticleSystem[] partSys = GetComponentsInChildren<ParticleSystem>();
         foreach(ParticleSystem part in partSys) { part.Stop(); }
 		GetComponent<SphereCollider>().radius = 0;
-		yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }

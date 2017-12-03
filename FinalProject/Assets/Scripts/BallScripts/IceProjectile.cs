@@ -18,8 +18,8 @@ public class IceProjectile : ProjectileType {
         FreezeEffect newFreeze = Instantiate(freezePrefab, hitPos, Quaternion.identity);
         Debug.Log("Oh No!");
         newFreeze.duration = duration;
-        newFreeze.GetComponent<SphereCollider>().radius = radius;
-        ParticleSystem[] parts = newFreeze.GetComponentsInChildren<ParticleSystem>();
+		newFreeze.transform.localScale = new Vector3(radius * 2, newFreeze.transform.localScale.y, radius * 2);
+		ParticleSystem[] parts = newFreeze.GetComponentsInChildren<ParticleSystem>();
         foreach(ParticleSystem part in parts) {
             ParticleSystem.MainModule main = part.main;
             main.startSpeed = radius;
