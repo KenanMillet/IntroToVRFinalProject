@@ -44,7 +44,8 @@ public class EnemySpawner : MonoBehaviour
 			healthPool += enemyStats.health;
 			spawnTime += Mathf.Max(spawnIntervalOverride, enemyStats.spawnInterval);
 		}
-		cooldownTime = wavegen.CooldownTime(waveNo, healthPool);
+		spawnTime = Mathf.Ceil(spawnTime);
+		cooldownTime = Mathf.Ceil(wavegen.CooldownTime(waveNo, healthPool));
 		int currentWave = waveNo;
 		yield return null;
 
@@ -59,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
             e.GetComponentInChildren<EnemyAI>().Speed += Mathf.Min(3, Mathf.Floor(_waveNo/3));
 			yield return new WaitForSeconds(Mathf.Max(spawnIntervalOverride, enemyStats.spawnInterval));
 		}
-		yield return new WaitForSeconds(cooldownTime);
+		while (timeRemainingInWave > 0) yield return null;
 		if (currentWave == waveNo)
 		{
 			if (--spawningQueue == 0) ++waveNo;

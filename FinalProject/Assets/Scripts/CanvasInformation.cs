@@ -69,7 +69,7 @@ public class CanvasInformation : MonoBehaviour
 			{
 				createNewInfoGO(gOName);
 			}
-			transform.Find(gOName).GetComponent<Text>().text = "" + GetComponentInParent<EnemyAI>().health;
+			transform.Find(gOName).GetComponent<Text>().text = "" + Mathf.Ceil(GetComponentInParent<EnemyAI>().health);
 		}
 		lookedAtBefore = true;
 	}

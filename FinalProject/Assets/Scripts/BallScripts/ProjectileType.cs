@@ -4,19 +4,21 @@ using UnityEngine;
 public class ProjectileType : ScriptableObject {
 
     public float radius;
-    public int damage;
-    public Transform hitEffect;
+    public float damage;
     public Mesh model;
-    public Color baseColor;
+	public Transform idleEffect, hitEffect;
+    public Color baseColor, crystalColor, glowColor;
 
     public virtual void setup(Projectile proj)
     {
-        // proj.GetComponent<MeshFilter>().mesh = model;
         MeshFilter innerCrystal = proj.transform.Find("InnerCrystal").GetComponent<MeshFilter>();
         innerCrystal.mesh = model;
-        innerCrystal.GetComponent<MeshRenderer>().material.color = baseColor;
+		if(idleEffect != null) proj.idleEffect = Instantiate(idleEffect, innerCrystal.transform.position, innerCrystal.transform.rotation, innerCrystal.transform);
+		innerCrystal.GetComponent<MeshRenderer>().material.color = crystalColor;
+		innerCrystal.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", glowColor);
 		proj.GetComponent<Renderer>().material.color = baseColor;
-        proj.GetComponent<TrailRenderer>().startColor = baseColor;
+		proj.GetComponent<TrailRenderer>().startColor = baseColor;
+		proj.damage = damage;
     }
 
     public virtual IEnumerator Die(Projectile proj, Collision coll)
@@ -26,7 +28,7 @@ public class ProjectileType : ScriptableObject {
             enemy.damage(proj);
             Debug.Log("Hit " + coll.collider.name + " for " + damage + " points of damage");
         }
-        proj.Die();
-        yield return new WaitForEndOfFrame();
+		if (hitEffect != null) proj.hitEffect = Instantiate(hitEffect, proj.transform.position, Quaternion.identity);
+		yield return null;
     }
 }
