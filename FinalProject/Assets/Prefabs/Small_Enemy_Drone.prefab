@@ -551,9 +551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebae3757ffb1b34459bfb413118d9cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originSpeed: 2
-  Speed: 2
-  MaxHealth: 1
+  originSpeed: 3.5
+  Speed: 3.5
+  MaxHealth: 2
   Group: 0
   healthColors:
     serializedVersion: 2

@@ -18,6 +18,7 @@ MonoBehaviour:
   hitEffect: {fileID: 4350179954522756, guid: 999b160a9923ca14c8115b65be527688, type: 2}
   baseColor: {r: 0.7294118, g: 1, b: 1, a: 0.597}
   crystalColor: {r: 0.4705882, g: 0.7560815, b: 1, a: 1}
-  glowColor: {r: 1, g: 1, b: 1, a: 1}
+  glowColor: {r: 0.8308824, g: 1, b: 1, a: 1}
   duration: 10
-  speedMod: 0.33333334
+  speedMod: 0.6666667
+  AoEHeight: 0
