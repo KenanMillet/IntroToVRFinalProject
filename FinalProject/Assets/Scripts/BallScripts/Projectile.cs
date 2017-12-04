@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-using Valve.VR.InteractionSystem;
-
 public class Projectile : MonoBehaviour
 {
-    
+    [HideInInspector]
     public Transform hitEffect;
+	[HideInInspector]
+	public Transform idleEffect;
     public Rigidbody respawnEffect;
 
 	[SerializeField]
@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
     public SphereCollider myColl;
     public MeshRenderer myRend;
 
-    public int damage;
+    public float damage;
 
 	public bool holstered = true;
 
@@ -39,36 +39,19 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -10f)
+		if (transform.position.y < -10f)
         {
-            Die();
+			Die();
         }
-    }
-
-    void HandHoverUpdate(Hand hand)
-    {
-        if (hand.GetStandardInteractionButtonDown())
-        {
-
-        }
-    }
-
-    void OnHandHoverEnd(Hand hand)
-    {
-        // Debug.Log("Exit");
     }
 
     void OnCollisionEnter(Collision coll)
     {
-        Debug.Log("Doing it.");
         StartCoroutine(blueprint.Die(this, coll));
     }
 
     public void Die()
     {
-        Transform newHitFX = Instantiate(hitEffect, transform.position, transform.rotation);
-        Destroy(newHitFX.gameObject, 2f);
-        // Deregister from spawner
         Destroy(gameObject);
     }
 

@@ -13,12 +13,7 @@ public class DefeatScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        defeatText.text = "You've run out of lives D: \n High Score: " + GameManager.highScore + "\n Your Score: " + GameManager.score
-            + "\n Press R to Restart.";
+        defeatText.text = "Super Space\nTower Defense\n\nHigh Score: " + GameManager.highScore + "\nScore: " + GameManager.score;
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(0);
-        }
     }
 }

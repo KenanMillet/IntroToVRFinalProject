@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,23 +23,27 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
-        scoreMult = 1;
-        lives = maxLives;
-        consecutiveKills = 0;
-        score = 0;
-        RefreshPathPoints();
-		EnemySpawner.waveNo = 1;
+		if (!PlayerPrefs.HasKey ("highscore")) {
+			PlayerPrefs.SetInt ("highscore", 0);
+			PlayerPrefs.Save ();
+		} else {
+			Debug.Log ("hi " + highScore);
+			highScore = PlayerPrefs.GetInt ("highscore");
+		}
+
+		DontDestroyOnLoad(this);
 	}
 
-	void Update () {
+	void Update ()
+	{
 		if (instance == null) instance = this;
 		else if (instance != this) Destroy(gameObject);
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Restart();
-            
-        }
+			if(state == State.GAME) EndGame();
+			else if(state == State.MENU) StartGame();
+		}
 
         if(consecutiveKills >= 3)
         {
@@ -50,9 +55,7 @@ public class GameManager : MonoBehaviour
         if (lives <= 0)
         {
             Debug.Log("Lives depleted, restarting.");
-            if (highScore < score) highScore = score;
-            SceneManager.LoadScene(1);
-            
+			EndGame();
         }
 	}
 
@@ -78,23 +81,31 @@ public class GameManager : MonoBehaviour
 
     public static void EndGame()
     {
-        if (highScore < score) highScore = score;
-        scoreMult = 1;
-        lives = maxLives;
-        consecutiveKills = 0;
-        score = 0;
-		SceneManager.LoadScene(0);
+		if (highScore < score) {
+			highScore = score;
+			PlayerPrefs.SetInt ("highscore", highScore);
+			PlayerPrefs.Save ();
+		}
+		lives = maxLives;
+		state = State.MENU;
+		SceneManager.LoadScene("Menu");
 	}
 
 	public static void StartGame()
 	{
-		RefreshPathPoints();
-		EnemySpawner.waveNo = 1;
 		scoreMult = 1;
-		lives = 10;
+		lives = maxLives;
 		consecutiveKills = 0;
 		score = 0;
 		state = State.GAME;
 		SceneManager.LoadScene("Main");
+		RefreshPathPoints();
+		instance.StartCoroutine(instance.WaitThenStart());
+	}
+
+	IEnumerator WaitThenStart()
+	{
+		yield return new WaitForSecondsRealtime(0.1f); ;
+		EnemySpawner.waveNo = 1;
 	}
 }

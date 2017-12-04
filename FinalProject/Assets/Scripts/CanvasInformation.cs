@@ -34,14 +34,15 @@ public class CanvasInformation : MonoBehaviour
 	public void doABunchOfUpdating()
 	{
 		updateData();
-		nameOfObject.text = transform.root.name;
+
 		if (GetComponentInParent<TowerScript>())
 		{
-			
+
 		}
 		//parent is goal
 		else if (GetComponentInParent<GoalScript>())
 		{
+			nameOfObject.text = transform.root.name;
 			string gOName = "goal_info";
 			if (!lookedAtBefore)
 			{
@@ -52,6 +53,7 @@ public class CanvasInformation : MonoBehaviour
 		//parent is enemy spawner thing
 		else if (transform.root.GetComponentInChildren<ProceduralSpawnScript>())
 		{
+			nameOfObject.text = transform.root.name;
 			string gOName = "wave_info";
 			if (!lookedAtBefore)
 			{
@@ -67,7 +69,7 @@ public class CanvasInformation : MonoBehaviour
 			{
 				createNewInfoGO(gOName);
 			}
-			transform.Find(gOName).GetComponent<Text>().text = "" + GetComponentInParent<EnemyAI>().health;
+			transform.Find(gOName).GetComponent<Text>().text = "" + Mathf.Ceil(GetComponentInParent<EnemyAI>().health);
 		}
 		lookedAtBefore = true;
 	}

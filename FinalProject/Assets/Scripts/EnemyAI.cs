@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float originSpeed;
-	[HideInInspector]
+	// [HideInInspector]
 	public float Speed;
 	[SerializeField]
 	protected float MaxHealth;
@@ -14,11 +14,17 @@ public class EnemyAI : MonoBehaviour
 	protected Gradient healthColors;
     public float spawnInterval;
 
+    public Transform root;
+
 	private float _health;
 	public float health
 	{
 		get { return _health; }
-		protected set { _health = value; dying = (value == 0); GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth)); }
+		protected set { _health = value; dying = (value <= 0);
+            Material[] mats = GetComponentInChildren<Renderer>().materials;
+            foreach(Material mat in mats) mat.color = Color.Lerp(mat.color, Color.black, 1.0f - (Mathf.Max(Mathf.Ceil(value), 0) / MaxHealth));
+			// GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth));
+		}
 	}
 
 	private bool _reachedEnd;
@@ -26,8 +32,7 @@ public class EnemyAI : MonoBehaviour
 	{
 
 		get { return _reachedEnd || transform.parent.position == path[path.Count - 1].transform.position; }
-		set { _reachedEnd = value;
-        }
+		set { _reachedEnd = value; }
 	}
 
 	protected List<PathPoint> path
@@ -70,18 +75,22 @@ public class EnemyAI : MonoBehaviour
 	{
 		if (!dying)
 		{
-			if (segment.magnitude > Vector3.Distance(transform.parent.position, path[index].transform.position)) transform.parent.position += segment.normalized * Speed * Time.deltaTime;
-			else
-			{
-				++index;
-				transform.parent.position = path[index].transform.position;
-				if (index == path.Count - 1)
-				{
-					dying = true;
-					return;
-				}
-				segment = path[index + 1].transform.position - path[index].transform.position;
-			}
+            if (segment.magnitude > Vector3.Distance(root.position, path[index].transform.position)) {
+                Quaternion forward = Quaternion.LookRotation(path[index + 1].transform.position - root.position);
+                root.rotation = Quaternion.Lerp(root.rotation, forward, Time.deltaTime * 2);
+                root.position += segment.normalized * Speed * Time.deltaTime;
+            }
+            else
+            {
+                ++index;
+                root.position = path[index].transform.position;
+                if (index == path.Count - 1)
+                {
+                    dying = true;
+                    return;
+                }
+                segment = path[index + 1].transform.position - path[index].transform.position;
+            }
 		}
 	}
 
@@ -139,7 +148,12 @@ public class EnemyAI : MonoBehaviour
 
 	public virtual void damage(Projectile p)
 	{
-		health -= p.damage;
+		damage(p.damage);
+	}
+
+	public virtual void damage(float d)
+	{
+		health -= d;
 	}
 
 	protected virtual void die()

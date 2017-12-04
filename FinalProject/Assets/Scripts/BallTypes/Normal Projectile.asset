@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0
   damage: 2
+  model: {fileID: 4300004, guid: 8683a820c44b04548ba2431b7d765cc7, type: 3}
+  idleEffect: {fileID: 0}
   hitEffect: {fileID: 4153243660770816, guid: 33ec356d585f65e40bc5138cdc2b8a22, type: 2}
-  model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  baseColor: {r: 1, g: 0, b: 0, a: 0.627451}
+  baseColor: {r: 0, g: 0, b: 0, a: 0.172}
+  crystalColor: {r: 0.42647058, g: 0.42647058, b: 0.42647058, a: 1}
+  glowColor: {r: 0, g: 0, b: 0, a: 0}

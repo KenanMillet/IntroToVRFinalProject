@@ -9,7 +9,9 @@ public class ExplosionProjectile : ProjectileType {
 
     public override IEnumerator Die(Projectile proj, Collision coll)
     {
-        Collider[] hits = Physics.OverlapSphere(proj.transform.position, radius, affectedTargets);
+		var baseCall = base.Die(proj, coll);
+		while (baseCall.MoveNext()) yield return baseCall.Current;
+		Collider[] hits = Physics.OverlapSphere(proj.transform.position, radius, affectedTargets);
         if(hits.Length > 0)
         {
             foreach(Collider hit in hits) {
