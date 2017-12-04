@@ -1,12 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class FreezeEffect : MonoBehaviour {
 
-    public float duration;
+	[HideInInspector]
+	public float duration = 5;
     float startTime;
-	public float speedMod;
+	[HideInInspector]
+	public float speedMod = 0.4f;
+
+	public float rotationspeed = 15;
 
     List<EnemyAI> losers = new List<EnemyAI>();
 
@@ -14,8 +17,10 @@ public class FreezeEffect : MonoBehaviour {
         startTime = Time.time;
     }
 
-    void Update() {
+    void Update()
+	{
         if(Time.time - startTime >= duration) { Die(); }
+		transform.Rotate(transform.up, Time.deltaTime * rotationspeed);
     }
 
 	void OnTriggerEnter(Collider coll)

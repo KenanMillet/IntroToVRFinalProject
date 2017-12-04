@@ -1,30 +1,29 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "Projectile Type/Ice Projectile")]
-public class IceProjectile : ProjectileType {
-
-    public LayerMask affectedTargets;
-    public float lifeSpan;
+public class IceProjectile : ProjectileType
+{
     public float duration;
+	public float speedMod;
+	public float AoEHeight;
 
-    public FreezeEffect freezePrefab;
-
-    public override IEnumerator Die(Projectile proj, Collision coll)
+	public override IEnumerator Die(Projectile proj, Collision coll)
     {
-        float startTime = Time.time;
-        Vector3 hitPos = proj.transform.position;
-        FreezeEffect newFreeze = Instantiate(freezePrefab, hitPos, Quaternion.identity);
-        Debug.Log("Oh No!");
-        newFreeze.duration = duration;
-		newFreeze.transform.localScale = new Vector3(radius * 2, newFreeze.transform.localScale.y, radius * 2);
-		ParticleSystem[] parts = newFreeze.GetComponentsInChildren<ParticleSystem>();
-        foreach(ParticleSystem part in parts) {
-            ParticleSystem.MainModule main = part.main;
-            main.startSpeed = radius;
-        }
-        proj.Die();
-        yield return new WaitForEndOfFrame();
+		var baseCall = base.Die(proj, coll);
+		while (baseCall.MoveNext()) yield return baseCall.Current;
+
+		hitEffect.GetComponent<FreezeEffect>().duration = duration;
+		hitEffect.GetComponent<FreezeEffect>().speedMod = speedMod;
+		hitEffect.localScale = new Vector3(radius * 2, hitEffect.localScale.y, radius * 2);
+		hitEffect.position = new Vector3(hitEffect.position.x, AoEHeight, hitEffect.position.z);
+		ParticleSystem[] parts = hitEffect.GetComponentsInChildren<ParticleSystem>();
+		foreach (ParticleSystem part in parts)
+		{
+			ParticleSystem.MainModule main = part.main;
+			main.startSpeed = radius;
+		}
+		proj.Die();
+		yield return null;
     }
 }

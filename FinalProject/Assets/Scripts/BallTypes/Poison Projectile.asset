@@ -11,17 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109099a302722864a969b7c1cdd3d12d, type: 3}
   m_Name: Poison Projectile
   m_EditorClassIdentifier: 
-  radius: 2
-  damage: 1
+  radius: 1
+  damage: 0
   model: {fileID: 4300000, guid: 755359cb873a0b84297e26f946ee19cd, type: 3}
   idleEffect: {fileID: 0}
   hitEffect: {fileID: 4350179954522756, guid: 63bf171c85e59744ca2ef7d78e8e497e, type: 2}
   baseColor: {r: 0.4482758, g: 1, b: 0, a: 0.627451}
   crystalColor: {r: 0, g: 0.547, b: 0, a: 1}
   glowColor: {r: 0, g: 0.8088235, b: 0, a: 1}
-  lifeSpan: 5
-  frequency: 2
-  delayTime: 2
-  enemyTypes:
-    serializedVersion: 2
-    m_Bits: 256
+  duration: 5
+  poisonDamage: 1

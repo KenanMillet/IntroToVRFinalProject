@@ -19,10 +19,5 @@ MonoBehaviour:
   baseColor: {r: 0.7294118, g: 1, b: 1, a: 0.597}
   crystalColor: {r: 0.4705882, g: 0.7560815, b: 1, a: 1}
   glowColor: {r: 1, g: 1, b: 1, a: 1}
-  affectedTargets:
-    serializedVersion: 2
-    m_Bits: 256
-  lifeSpan: 0
-  duration: 5
-  freezePrefab: {fileID: 114451890085440316, guid: 999b160a9923ca14c8115b65be527688,
-    type: 2}
+  duration: 10
+  speedMod: 0.33333334

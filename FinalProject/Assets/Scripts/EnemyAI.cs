@@ -20,14 +20,11 @@ public class EnemyAI : MonoBehaviour
 	public float health
 	{
 		get { return _health; }
-		protected set { _health = value; dying = (value == 0);
+		protected set { _health = value; dying = (value <= 0);
             Material[] mats = GetComponentInChildren<Renderer>().materials;
-            foreach(Material mat in mats) {
-                mat.color = Color.Lerp(mat.color, Color.black, 1.0f - (value / MaxHealth));
-                
-            }
-            // GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth));
-        }
+            foreach(Material mat in mats) mat.color = Color.Lerp(mat.color, Color.black, 1.0f - (Mathf.Max(Mathf.Ceil(value), 0) / MaxHealth));
+			// GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth));
+		}
 	}
 
 	private bool _reachedEnd;
@@ -151,7 +148,12 @@ public class EnemyAI : MonoBehaviour
 
 	public virtual void damage(Projectile p)
 	{
-		health -= p.damage;
+		damage(p.damage);
+	}
+
+	public virtual void damage(float d)
+	{
+		health -= d;
 	}
 
 	protected virtual void die()
