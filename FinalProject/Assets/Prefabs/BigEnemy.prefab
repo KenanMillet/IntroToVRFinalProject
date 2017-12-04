@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114762812217057390}
   - component: {fileID: 114234874728644288}
   - component: {fileID: 114786960374135468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 223477222572645328}
   - component: {fileID: 114604366873010894}
   - component: {fileID: 114318171299905744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CanvasInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114178462349488530}
   - component: {fileID: 114096344010056752}
   - component: {fileID: 64224699097772758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  spawnInterval: 3.5
+  spawnInterval: 6
   root: {fileID: 4402830979934626}
 --- !u!114 &114205427317858766
 MonoBehaviour:
