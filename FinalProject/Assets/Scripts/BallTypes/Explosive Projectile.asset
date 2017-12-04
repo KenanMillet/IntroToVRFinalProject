@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Explosive Projectile
   m_EditorClassIdentifier: 
   radius: 3
-  damage: 1
+  damage: 2.5
   model: {fileID: 4300000, guid: f724617a3f4d3314390cd0c8d19dc9c3, type: 3}
   idleEffect: {fileID: 0}
   hitEffect: {fileID: 4153243660770816, guid: 8d810d3557e74ea44b0ba0b7c5fd581f, type: 2}
