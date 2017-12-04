@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
 	{
 		get { return _health; }
 		protected set { _health = value; dying = (value == 0);
-            Material[] mats = GetComponent<Renderer>().materials;
+            Material[] mats = GetComponentInChildren<Renderer>().materials;
             foreach(Material mat in mats) {
                 mat.color = Color.Lerp(mat.color, Color.black, 1.0f - (value / MaxHealth));
                 
@@ -35,8 +35,7 @@ public class EnemyAI : MonoBehaviour
 	{
 
 		get { return _reachedEnd || transform.parent.position == path[path.Count - 1].transform.position; }
-		set { _reachedEnd = value;
-        }
+		set { _reachedEnd = value; }
 	}
 
 	protected List<PathPoint> path

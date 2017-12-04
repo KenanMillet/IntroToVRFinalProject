@@ -52,7 +52,6 @@ public class CustomThrowing : MonoBehaviour {
                 heldRbody.useGravity = false;
                 heldRbody.isKinematic = true;
                 if(originMaterial == null) { originMaterial = heldMR.material; }
-                heldObject.GetComponent<MeshRenderer>().material = highlightMaterial;
                 Debug.Log("laldsfsadf");
             }
         }

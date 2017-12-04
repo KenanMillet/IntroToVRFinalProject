@@ -198,8 +198,8 @@ TrailRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1822832284041478}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -223,7 +223,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.15
+  m_Time: 0.3
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.3
@@ -231,10 +231,16 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.0020694733
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        time: 0
+        value: 0
+        inSlope: 5.8352685
+        outSlope: 5.8352685
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.24573314
+        value: 0.5345936
+        inSlope: 0.0781301
+        outSlope: 0.0781301
         tangentMode: 0
       - serializedVersion: 2
         time: 1
@@ -247,7 +253,7 @@ TrailRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.625, g: 0.625, b: 0.625, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -279,7 +285,7 @@ TrailRenderer:
     alignment: 0
     textureMode: 0
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.01
   m_Autodestruct: 0
 --- !u!114 &114007124013189410
 MonoBehaviour:
