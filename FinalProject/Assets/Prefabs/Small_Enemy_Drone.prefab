@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4542425915813772}
   - component: {fileID: 33862248041405614}
   - component: {fileID: 23327887209924156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_DroneWingRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4453206587435414}
   - component: {fileID: 33789726133536534}
   - component: {fileID: 23999400474955464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_DroneBladeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 223157146767825306}
   - component: {fileID: 114987810893498766}
   - component: {fileID: 114172079006851896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CanvasInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4553038631611224}
   - component: {fileID: 33244369868792062}
   - component: {fileID: 23264240470981228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_DroneWingLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 114492114572165382}
   - component: {fileID: 114278651583698100}
   - component: {fileID: 114712460408742014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 4613752527195532}
   - component: {fileID: 33263678591678696}
   - component: {fileID: 23876027775618750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_DroneBladeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 4375152813330296}
   - component: {fileID: 33542195429957966}
   - component: {fileID: 23621377102673332}
+  - component: {fileID: 65824372989632640}
   m_Layer: 0
   m_Name: PA_Drone
   m_TagString: Untagged
@@ -233,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1707708653065554}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.4796047, y: -2.287489, z: -9.199534}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4916517058711108}
@@ -345,7 +346,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 4cd64bb5414d7d44d82826bfe4f4adba, type: 2}
-  - {fileID: 2100000, guid: f6e9f28eec926a44aaadf7396eba60ba, type: 2}
+  - {fileID: 2100000, guid: fb98345886d08ae4fb2164daa349e8bc, type: 2}
   - {fileID: 2100000, guid: f122ebda54d5a954d86c01372f509090, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -464,6 +465,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1013160631150052}
   m_Mesh: {fileID: 4300006, guid: 7681beaba79eb244aa1ecc44f41e3e3e, type: 3}
+--- !u!65 &65824372989632640
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856820380801702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95657771823794534
 Animator:
   serializedVersion: 3
