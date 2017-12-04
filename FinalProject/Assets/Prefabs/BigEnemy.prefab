@@ -291,7 +291,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  spawnInterval: 3.5
+  spawnInterval: 6
   root: {fileID: 4402830979934626}
 --- !u!114 &114205427317858766
 MonoBehaviour:
