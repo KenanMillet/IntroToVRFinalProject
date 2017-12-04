@@ -18,11 +18,11 @@ public class FreezeEffect : MonoBehaviour {
         if(Time.time - startTime >= duration) { StartCoroutine(Die()); }
     }
 
-	void OnTriggerEnter(Collider coll)
+	void OnTriggerStay(Collider coll)
     {
-		Debug.Log(coll.name + " entered the cold AoE.");
+		// Debug.Log(coll.name + " entered the cold AoE.");
         EnemyAI enem = coll.GetComponent<EnemyAI>();
-        if (enem) {
+        if (enem && !losers.Contains(enem)) {
             enem.Speed = enem.originSpeed * speedMod;
             losers.Add(enem);
         }

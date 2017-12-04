@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4542425915813772}
   - component: {fileID: 33862248041405614}
   - component: {fileID: 23327887209924156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_DroneWingRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4916517058711108}
   - component: {fileID: 95657771823794534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4453206587435414}
   - component: {fileID: 33789726133536534}
   - component: {fileID: 23999400474955464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_DroneBladeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 223157146767825306}
   - component: {fileID: 114987810893498766}
   - component: {fileID: 114172079006851896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CanvasInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4553038631611224}
   - component: {fileID: 33244369868792062}
   - component: {fileID: 23264240470981228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_DroneWingLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 114492114572165382}
   - component: {fileID: 114278651583698100}
   - component: {fileID: 114712460408742014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 4613752527195532}
   - component: {fileID: 33263678591678696}
   - component: {fileID: 23876027775618750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_DroneBladeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 114152792602195654}
   - component: {fileID: 114266347375866868}
   - component: {fileID: 65824372989632640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

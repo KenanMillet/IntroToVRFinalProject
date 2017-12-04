@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float originSpeed;
-	[HideInInspector]
+	// [HideInInspector]
 	public float Speed;
 	[SerializeField]
 	protected float MaxHealth;

@@ -12,9 +12,9 @@ public class PoisonBombProjectile : ProjectileType {
 
     public override IEnumerator Die(Projectile proj, Collision coll)
     {
+        proj.rbody.constraints = RigidbodyConstraints.FreezeAll;
         yield return new WaitForSeconds(delayTime);
         float startTime = Time.time;
-        proj.rbody.constraints = RigidbodyConstraints.FreezeAll;
         proj.myColl.enabled = false;
         while(Time.time - startTime < lifeSpan)
         {
