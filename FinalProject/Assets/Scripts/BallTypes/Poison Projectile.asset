@@ -19,5 +19,5 @@ MonoBehaviour:
   baseColor: {r: 0.4482758, g: 1, b: 0, a: 0.627451}
   crystalColor: {r: 0, g: 0.547, b: 0, a: 1}
   glowColor: {r: 0, g: 0.8088235, b: 0, a: 1}
-  duration: 5
-  poisonDamage: 1
+  duration: 10
+  poisonDamage: 2
