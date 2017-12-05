@@ -11,7 +11,8 @@ public class IceProjectile : ProjectileType
 	public override IEnumerator Die(Projectile proj, Collision coll)
     {
 		var baseCall = base.Die(proj, coll);
-		while (baseCall.MoveNext()) yield return baseCall.Current;
+		object garbage;
+		while (baseCall.MoveNext()) garbage = baseCall.Current;
 
 		proj.hitEffect.GetComponent<FreezeEffect>().duration = duration;
 		proj.hitEffect.GetComponent<FreezeEffect>().speedMod = speedMod;

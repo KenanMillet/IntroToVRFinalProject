@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static float scoreMult = 1;
-	public static int maxLives = 15;
-    public static int lives = 15;
+	public static int maxLives = 20;
+    public static int lives = 20;
     public static int score = 0;
     public static int highScore;
     public static int consecutiveKills = 0;

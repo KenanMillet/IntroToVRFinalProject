@@ -28,7 +28,7 @@ public class ProjectileType : ScriptableObject {
             enemy.damage(proj);
             Debug.Log("Hit " + coll.collider.name + " for " + damage + " points of damage");
         }
-		if (hitEffect != null) proj.hitEffect = Instantiate(hitEffect, proj.transform.position, Quaternion.identity);
+		if (hitEffect != null) proj.hitEffect = Instantiate(hitEffect, proj.transform.position, Quaternion.identity, null);
 		yield return null;
     }
 }
