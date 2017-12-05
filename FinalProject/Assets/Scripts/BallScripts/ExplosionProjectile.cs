@@ -16,8 +16,7 @@ public class ExplosionProjectile : ProjectileType {
         {
             foreach(Collider hit in hits) {
                 EnemyAI enem = hit.GetComponent<EnemyAI>();
-                if (enem)
-                {
+                if (enem) {
                     enem.damage(proj);
                     Debug.Log("Exploded " + hit.name + " for " + damage + " points of damage");
                 }

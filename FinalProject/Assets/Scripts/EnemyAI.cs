@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -26,6 +27,8 @@ public class EnemyAI : MonoBehaviour
 			// GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth));
 		}
 	}
+    Coroutine hurtRoutine;
+    [SerializeField] Material hurtMaterial;
 
 	private bool _reachedEnd;
 	public bool reachedEnd
@@ -149,12 +152,38 @@ public class EnemyAI : MonoBehaviour
 	public virtual void damage(Projectile p)
 	{
 		damage(p.damage);
+        if(hurtRoutine != null) { StopCoroutine(hurtRoutine); }
+        hurtRoutine = StartCoroutine(hurtVisuals());
 	}
 
 	public virtual void damage(float d)
 	{
 		health -= d;
-	}
+        if (hurtRoutine != null) { StopCoroutine(hurtRoutine); }
+        hurtRoutine = StartCoroutine(hurtVisuals());
+    }
+
+    public IEnumerator hurtVisuals()
+    {
+        Renderer[] rends = GetComponentsInChildren<Renderer>();
+        List<gettingHurtBullshit> hurtMats = new List<gettingHurtBullshit>();
+        foreach(Renderer rend in rends) {
+            gettingHurtBullshit hurtMat = new gettingHurtBullshit();
+            hurtMat.rend = rend;
+            hurtMat.originMaterial = rend.material;
+            hurtMats.Add(hurtMat);
+            rend.material = hurtMaterial;
+        }
+        yield return new WaitForSeconds(0.1f);
+        foreach(gettingHurtBullshit hurtMat in hurtMats) { hurtMat.rend.material = hurtMat.originMaterial; }
+        hurtRoutine = null;
+    }
+
+    class gettingHurtBullshit
+    {
+        public Renderer rend;
+        public Material originMaterial;
+    }
 
 	protected virtual void die()
 	{
