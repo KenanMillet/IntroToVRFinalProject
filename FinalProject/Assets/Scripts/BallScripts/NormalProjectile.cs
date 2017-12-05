@@ -8,7 +8,9 @@ public class NormalProjectile : ProjectileType
 	public override IEnumerator Die(Projectile proj, Collision coll)
 	{
 		var baseCall = base.Die(proj, coll);
-		while (baseCall.MoveNext()) yield return baseCall.Current;
+		object garbage;
+		while (baseCall.MoveNext()) garbage = baseCall.Current;
+		Destroy(proj.hitEffect.gameObject, 0.5f);
 		proj.Die();
 		yield return null;
 	}
