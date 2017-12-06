@@ -131,20 +131,14 @@ public class EnemyAI : MonoBehaviour
 	private void initPathing()
 	{
 		path = new List<PathPoint>(FindObjectsOfType<PathPoint>() as PathPoint[]);
-		foreach (PathPoint p in path)
-		{
-			if (p.Group != Group) path.Remove(p);
-		}
+		path.RemoveAll(p => p.Group != Group);
 		path.Sort((a, b) => a.Order.CompareTo(b.Order));
 	}
 
 	public static void initPathing(int group)
 	{
 		GameManager.paths[group] = new List<PathPoint>(FindObjectsOfType<PathPoint>() as PathPoint[]);
-		foreach (PathPoint p in GameManager.paths[group])
-		{
-			if (p.Group != group) GameManager.paths[group].Remove(p);
-		}
+		GameManager.paths[group].RemoveAll(p => p.Group != group);
 		GameManager.paths[group].Sort((a, b) => a.Order.CompareTo(b.Order));
 	}
 
@@ -199,6 +193,6 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("Score is now: " + GameManager.score);
 			transform.root.GetComponent<SoundEffects> ().playSound();
         }
-        Destroy(gameObject); //TODO: Replace with a real death animation and such
+		Destroy(root.gameObject); //TODO: Replace with a real death animation and such
 	}
 }
