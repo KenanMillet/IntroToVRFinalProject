@@ -34,7 +34,7 @@ public class TowerScript : MonoBehaviour {
 			{
 				SteamVR_Fade.Start(Color.black, 0);
 				SteamVR_Fade.Start(Color.clear, teleportFadeTime);
-
+				transform.root.GetComponent<SoundEffects> ().playSound ();
 				player.transform.root.position = TeleportPoint.transform.position;
 			}
 		}
