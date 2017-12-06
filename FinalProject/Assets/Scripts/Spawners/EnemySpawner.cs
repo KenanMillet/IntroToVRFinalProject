@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
 	private float cooldownTime, spawnTime;
 	private static float waveStartTime;
 	private static int spawningQueue;
+	public AnimationCurve proceduralScriptDistribution;
 
 	public static float waveDuration { get; private set; }
 
@@ -34,7 +35,9 @@ public class EnemySpawner : MonoBehaviour
 
 	IEnumerator Spawn()
 	{
-		ProceduralSpawnScript wavegen = GetComponent<ProceduralSpawnScript>();
+		ProceduralSpawnScript[] scripts = GetComponents<ProceduralSpawnScript>();
+		float selection = Mathf.Clamp01(proceduralScriptDistribution.Evaluate(Random.value)) * scripts.Length;
+		ProceduralSpawnScript wavegen = scripts[Mathf.RoundToInt(selection)];
 		GameObject[] wave = wavegen.Wave(waveNo);
 		float healthPool = 0;
 		spawnTime = 0;
