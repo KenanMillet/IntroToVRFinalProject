@@ -58,6 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4033711824581550}
   - component: {fileID: 82681331758037784}
+  - component: {fileID: 114334084481946536}
   m_Layer: 8
   m_Name: MidEnemy_Robit
   m_TagString: Untagged
@@ -198,11 +199,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fff556eaa02d82f439110b397623fa98, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: d7a220cc6d4348c42a964b5e11ba26db, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -355,6 +356,19 @@ MonoBehaviour:
   spawnInterval: 2
   root: {fileID: 4033711824581550}
   hurtMaterial: {fileID: 2100000, guid: 60ffece5efa62ec4685174601bad545e, type: 2}
+--- !u!114 &114334084481946536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578821603505430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9dc81a61c644534ba854e00d7acb335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseLife: {fileID: 8300000, guid: 9084b8123f61bca46a63ab981b752ecc, type: 3}
+  scoreMultiplier: {fileID: 0}
 --- !u!114 &114585639850018214
 MonoBehaviour:
   m_ObjectHideFlags: 1
