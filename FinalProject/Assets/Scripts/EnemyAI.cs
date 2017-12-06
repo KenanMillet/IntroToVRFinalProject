@@ -189,6 +189,7 @@ public class EnemyAI : MonoBehaviour
             GameManager.lives -= (int)_health;
             GameManager.consecutiveKills = 0;
             Debug.Log("Lives remaining: " + GameManager.lives);
+			transform.root.GetComponent<SoundEffects> ().playLoseLife ();
         }
         else
         {
@@ -196,6 +197,7 @@ public class EnemyAI : MonoBehaviour
             GameManager.score += (int)(this.MaxHealth * 10 * GameManager.scoreMult);
             GameManager.consecutiveKills++;
             Debug.Log("Score is now: " + GameManager.score);
+			transform.root.GetComponent<SoundEffects> ().playSound();
         }
         Destroy(gameObject); //TODO: Replace with a real death animation and such
 	}
