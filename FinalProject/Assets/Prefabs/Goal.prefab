@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212333385917622518}
   - component: {fileID: 114701380620160388}
   m_Layer: 0
-  m_Name: Path Point (6)
+  m_Name: Path Point Flying (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

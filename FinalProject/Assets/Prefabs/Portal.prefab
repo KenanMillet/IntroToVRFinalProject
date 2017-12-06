@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 212418307608750368}
   - component: {fileID: 114261702340000228}
   m_Layer: 0
-  m_Name: Path Point (1)
+  m_Name: Path Point Flying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,6 +692,7 @@ MonoBehaviour:
   - {fileID: 1707708653065554, guid: 9ce4d70213023a84487bb5e4153f15d2, type: 2}
   - {fileID: 1578821603505430, guid: 57adf14cf56277549ab436339f54ae0b, type: 2}
   - {fileID: 1256301849984684, guid: 0f321b2d26b88e94d8946577f80014f7, type: 2}
+  - {fileID: 1707708653065554, guid: 81421300d344ed64f902b527e8796bbc, type: 2}
   healthMod: 0.75
   baseTime: 20
   baseMin: 10
