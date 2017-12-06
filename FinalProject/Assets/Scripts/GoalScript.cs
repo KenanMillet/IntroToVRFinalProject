@@ -23,7 +23,8 @@ public class GoalScript : MonoBehaviour
 	{
 		foreach(Renderer renderer in renderers) {
 			renderer.material.color = healthColors.Evaluate(1.0f - GameManager.lives / (float)GameManager.maxLives);
-		}
+            renderer.material.SetColor("_EmissionColor", healthColors.Evaluate(1.0f - GameManager.lives / (float)GameManager.maxLives));
+        }
         main.startColor = portalColors.Evaluate(1.0f - GameManager.lives / (float)GameManager.maxLives);
     }
 }
