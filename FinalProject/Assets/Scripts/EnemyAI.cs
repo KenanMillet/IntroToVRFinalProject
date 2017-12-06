@@ -152,11 +152,13 @@ public class EnemyAI : MonoBehaviour
 	{
 		damage(p.damage);
 	}
-
+    
 	public virtual void damage(float d)
 	{
 		health -= d;
-        if (hurtRoutine != null) { StopCoroutine(hurtRoutine); }
+        if (hurtRoutine != null) {
+            return;
+        }
         hurtRoutine = StartCoroutine(hurtVisuals());
     }
 
