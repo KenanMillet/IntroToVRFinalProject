@@ -34,7 +34,8 @@ public class EnemySpawner : MonoBehaviour
 
 	IEnumerator Spawn()
 	{
-		ProceduralSpawnScript wavegen = GetComponent<ProceduralSpawnScript>();
+		ProceduralSpawnScript[] scripts = GetComponents<ProceduralSpawnScript>();
+		ProceduralSpawnScript wavegen = scripts[Random.Range(0, scripts.Length)];
 		GameObject[] wave = wavegen.Wave(waveNo);
 		float healthPool = 0;
 		spawnTime = 0;
