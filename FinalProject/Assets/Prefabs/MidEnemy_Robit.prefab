@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578821603505430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4242463, y: -0.002000011, z: 17.468082}
+  m_LocalPosition: {x: -2.05, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4326982118877426}
@@ -273,7 +273,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   spawnInterval: 2
   root: {fileID: 4033711824581550}
-  hurtMaterial: {fileID: 0}
+  hurtMaterial: {fileID: 2100000, guid: 60ffece5efa62ec4685174601bad545e, type: 2}
 --- !u!114 &114585639850018214
 MonoBehaviour:
   m_ObjectHideFlags: 1

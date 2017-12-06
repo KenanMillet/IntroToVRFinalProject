@@ -22,8 +22,7 @@ public class EnemyAI : MonoBehaviour
 	{
 		get { return _health; }
 		protected set { _health = value; dying = (value <= 0);
-            Material[] mats = GetComponentInChildren<Renderer>().materials;
-            foreach(Material mat in mats) mat.color = Color.Lerp(mat.color, Color.black, 1.0f - (Mathf.Max(Mathf.Ceil(value), 0) / MaxHealth));
+            // StartCoroutine(hurtVisuals());
 			// GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth));
 		}
 	}
@@ -152,8 +151,6 @@ public class EnemyAI : MonoBehaviour
 	public virtual void damage(Projectile p)
 	{
 		damage(p.damage);
-        if(hurtRoutine != null) { StopCoroutine(hurtRoutine); }
-        hurtRoutine = StartCoroutine(hurtVisuals());
 	}
 
 	public virtual void damage(float d)
@@ -165,26 +162,23 @@ public class EnemyAI : MonoBehaviour
 
     public IEnumerator hurtVisuals()
     {
-        Renderer[] rends = GetComponentsInChildren<Renderer>();
-        List<gettingHurtBullshit> hurtMats = new List<gettingHurtBullshit>();
-        foreach(Renderer rend in rends) {
-            gettingHurtBullshit hurtMat = new gettingHurtBullshit();
-            hurtMat.rend = rend;
-            hurtMat.originMaterial = rend.material;
-            hurtMats.Add(hurtMat);
-            rend.material = hurtMaterial;
+        Renderer rend = GetComponent<Renderer>();
+        // Material[] originMats = new Material[rend.materials.Length];
+        Material[] originMats = rend.materials;
+        Material[] newMats = new Material[rend.materials.Length];
+        // Color[] originColor = new Color[mats.Length];
+        for(int i = 0; i < rend.materials.Length; i++) {
+            // originMats[i] = new Material(rend.materials[i]);
+            newMats[i] = hurtMaterial;
         }
-        yield return new WaitForSeconds(0.1f);
-        foreach(gettingHurtBullshit hurtMat in hurtMats) { hurtMat.rend.material = hurtMat.originMaterial; }
+        rend.materials = newMats;
+        yield return new WaitForSeconds(0.1f); // wait
+        rend.materials = originMats;
+        Material[] mats = rend.materials;
+        foreach (Material mat in mats) mat.color = Color.Lerp(mat.color, Color.black, 1.0f - (Mathf.Max(Mathf.Ceil(_health), 0) / MaxHealth));
         hurtRoutine = null;
     }
-
-    class gettingHurtBullshit
-    {
-        public Renderer rend;
-        public Material originMaterial;
-    }
-
+    
 	protected virtual void die()
 	{
         if (reachedEnd)
