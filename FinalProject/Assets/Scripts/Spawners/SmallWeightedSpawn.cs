@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallWeightedSpawn : ProceduralSpawnScript {
+public class SmallWeightedSpawn : ProceduralSpawnScript
+{
     public float healthMod = 0.75f;
     public float baseTime = 20f;
     public float baseMin = 10f;
@@ -44,28 +45,7 @@ public class SmallWeightedSpawn : ProceduralSpawnScript {
             while (proceduralVal > 0)
             {
 
-                //assigns enemyIndex with a preference for small enemy types - wave will be weighted to have 50-100% small enemies
-                float preference = Random.Range(.5f, 1f);
-                float prefForOthers = (1 - preference) / 3;
-                float enemySelector = Random.Range(0f, 1f);
-                int enemyIndex;
-                if (enemySelector >= 0 && enemySelector <= preference)
-                {
-                    enemyIndex = 0;
-                }
-                else if (enemySelector > preference && enemySelector <= (preference + prefForOthers))
-                {
-                    enemyIndex = 1;
-                }
-                else if (enemySelector > (preference + prefForOthers) && enemySelector <= (preference + (2 * prefForOthers)))
-                {
-                    enemyIndex = 2;
-                }
-                else if (enemySelector > (preference + (2 * prefForOthers)) && enemySelector <= (preference + (3 * prefForOthers)))
-                {
-                    enemyIndex = 3;
-                }
-                else enemyIndex = 0;
+                int enemyIndex = assignIndexWithPref(.5f, 1f);
 
                 switch (enemyIndex)
                 {
@@ -95,4 +75,33 @@ public class SmallWeightedSpawn : ProceduralSpawnScript {
         return wave.ToArray();
     }
 
+
+    public int assignIndexWithPref(float lowerPref, float upperPref)
+    {
+        //assigns enemyIndex with a preference for small enemy types - wave will be weighted
+        //to have a percentage of small enemies based on parameters6 passed to this method
+        float preference = Random.Range(lowerPref, upperPref);
+        float prefForOthers = (1 - preference) / 3;
+        float enemySelector = Random.Range(0f, 1f);
+        int enemyIndex;
+        if (enemySelector >= 0 && enemySelector <= preference)
+        {
+            enemyIndex = 0;
+        }
+        else if (enemySelector > preference && enemySelector <= (preference + prefForOthers))
+        {
+            enemyIndex = 1;
+        }
+        else if (enemySelector > (preference + prefForOthers) && enemySelector <= (preference + (2 * prefForOthers)))
+        {
+            enemyIndex = 2;
+        }
+        else if (enemySelector > (preference + (2 * prefForOthers)) && enemySelector <= (preference + (3 * prefForOthers)))
+        {
+            enemyIndex = 3;
+        }
+        else enemyIndex = 0; //default case for rounding errors
+
+        return enemyIndex;
+    }
 }
