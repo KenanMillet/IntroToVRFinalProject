@@ -6,18 +6,19 @@ public class IceProjectile : ProjectileType
 {
     public float duration;
 	public float speedMod;
-	public float AoEHeight;
+	public float MarkerHeight;
 
 	public override IEnumerator Die(Projectile proj, Collision coll)
     {
 		var baseCall = base.Die(proj, coll);
-		while (baseCall.MoveNext()) yield return baseCall.Current;
+		object garbage;
+		while (baseCall.MoveNext()) garbage = baseCall.Current;
 
-		hitEffect.GetComponent<FreezeEffect>().duration = duration;
-		hitEffect.GetComponent<FreezeEffect>().speedMod = speedMod;
-		hitEffect.localScale = new Vector3(radius * 2, hitEffect.localScale.y, radius * 2);
-		hitEffect.position = new Vector3(hitEffect.position.x, AoEHeight, hitEffect.position.z);
-		ParticleSystem[] parts = hitEffect.GetComponentsInChildren<ParticleSystem>();
+		proj.hitEffect.GetComponent<FreezeEffect>().duration = duration;
+		proj.hitEffect.GetComponent<FreezeEffect>().speedMod = speedMod;
+		proj.hitEffect.localScale = new Vector3(radius * 2, proj.hitEffect.localScale.y, radius * 2);
+		proj.hitEffect.position = new Vector3(proj.hitEffect.position.x, MarkerHeight, proj.hitEffect.position.z);
+		ParticleSystem[] parts = proj.hitEffect.GetComponentsInChildren<ParticleSystem>();
 		foreach (ParticleSystem part in parts)
 		{
 			ParticleSystem.MainModule main = part.main;

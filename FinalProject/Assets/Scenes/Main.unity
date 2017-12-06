@@ -704,6 +704,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 82514298235512952, guid: 6f6e6d9e56ce68a40b32fffae656ecd1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114501514293828836, guid: 6f6e6d9e56ce68a40b32fffae656ecd1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917001070524352, guid: 6f6e6d9e56ce68a40b32fffae656ecd1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f6e6d9e56ce68a40b32fffae656ecd1, type: 2}
   m_IsPrefabParent: 0
@@ -1569,6 +1583,16 @@ Prefab:
     - target: {fileID: 4109207036782454, guid: d7d8e28cc936d5b429f29bd2970014f9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296002361651568, guid: d7d8e28cc936d5b429f29bd2970014f9,
+        type: 2}
+      propertyPath: ballBasket.Array.data[1].count
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296002361651568, guid: d7d8e28cc936d5b429f29bd2970014f9,
+        type: 2}
+      propertyPath: ballBasket.Array.data[0].count
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7d8e28cc936d5b429f29bd2970014f9, type: 2}
@@ -4307,6 +4331,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114296002361651568, guid: d7d8e28cc936d5b429f29bd2970014f9,
+        type: 2}
+      propertyPath: ballBasket.Array.data[2].count
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296002361651568, guid: d7d8e28cc936d5b429f29bd2970014f9,
+        type: 2}
+      propertyPath: ballBasket.Array.data[3].count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296002361651568, guid: d7d8e28cc936d5b429f29bd2970014f9,
+        type: 2}
+      propertyPath: ballBasket.Array.data[0].count
+      value: 19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7d8e28cc936d5b429f29bd2970014f9, type: 2}
   m_IsPrefabParent: 0
@@ -4785,7 +4824,7 @@ Prefab:
     - target: {fileID: 114296002361651568, guid: d7d8e28cc936d5b429f29bd2970014f9,
         type: 2}
       propertyPath: ballBasket.Array.data[0].count
-      value: 1
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7d8e28cc936d5b429f29bd2970014f9, type: 2}
@@ -6442,12 +6481,6 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114123294484767876, guid: 10c114d613444cc458b429d34add69f9,
-        type: 2}
-      propertyPath: enemyTypes.Array.data[0]
-      value: 
-      objectReference: {fileID: 1707708653065554, guid: 9ce4d70213023a84487bb5e4153f15d2,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10c114d613444cc458b429d34add69f9, type: 2}
   m_IsPrefabParent: 0
