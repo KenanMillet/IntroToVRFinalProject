@@ -12,7 +12,8 @@ public class PoisonBombProjectile : ProjectileType {
 	public override IEnumerator Die(Projectile proj, Collision coll)
     {
 		var baseCall = base.Die(proj, coll);
-		while (baseCall.MoveNext()) yield return baseCall.Current;
+		object garbage;
+		while (baseCall.MoveNext()) garbage = baseCall.Current;
 
 		proj.hitEffect.localScale = new Vector3(radius * 2, hitEffect.localScale.y, radius * 2);
 		proj.hitEffect.GetComponent<PoisonEffect>().damagePerSecond = poisonDamage;

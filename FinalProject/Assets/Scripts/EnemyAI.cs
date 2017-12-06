@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -21,11 +22,12 @@ public class EnemyAI : MonoBehaviour
 	{
 		get { return _health; }
 		protected set { _health = value; dying = (value <= 0);
-            Material[] mats = GetComponentInChildren<Renderer>().materials;
-            foreach(Material mat in mats) mat.color = Color.Lerp(mat.color, Color.black, 1.0f - (Mathf.Max(Mathf.Ceil(value), 0) / MaxHealth));
+            // StartCoroutine(hurtVisuals());
 			// GetComponent<Renderer>().material.color = healthColors.Evaluate(1.0f - (value / MaxHealth));
 		}
 	}
+    Coroutine hurtRoutine;
+    [SerializeField] Material hurtMaterial;
 
 	private bool _reachedEnd;
 	public bool reachedEnd
@@ -150,12 +152,35 @@ public class EnemyAI : MonoBehaviour
 	{
 		damage(p.damage);
 	}
-
+    
 	public virtual void damage(float d)
 	{
 		health -= d;
-	}
+        if (hurtRoutine != null) {
+            return;
+        }
+        hurtRoutine = StartCoroutine(hurtVisuals());
+    }
 
+    public IEnumerator hurtVisuals()
+    {
+        Renderer rend = GetComponent<Renderer>();
+        // Material[] originMats = new Material[rend.materials.Length];
+        Material[] originMats = rend.materials;
+        Material[] newMats = new Material[rend.materials.Length];
+        // Color[] originColor = new Color[mats.Length];
+        for(int i = 0; i < rend.materials.Length; i++) {
+            // originMats[i] = new Material(rend.materials[i]);
+            newMats[i] = hurtMaterial;
+        }
+        rend.materials = newMats;
+        yield return new WaitForSeconds(0.1f); // wait
+        rend.materials = originMats;
+        Material[] mats = rend.materials;
+        foreach (Material mat in mats) mat.color = Color.Lerp(mat.color, Color.black, 1.0f - (Mathf.Max(Mathf.Ceil(_health), 0) / MaxHealth));
+        hurtRoutine = null;
+    }
+    
 	protected virtual void die()
 	{
         if (reachedEnd)
