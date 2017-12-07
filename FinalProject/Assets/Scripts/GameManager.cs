@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
 			PlayerPrefs.SetInt ("highscore", 0);
 			PlayerPrefs.Save ();
 		} else {
-			Debug.Log ("hi " + highScore);
 			highScore = PlayerPrefs.GetInt ("highscore");
 		}
 
@@ -50,7 +49,8 @@ public class GameManager : MonoBehaviour
             scoreMult++;
             consecutiveKills = 0;
             Debug.Log("3 kills in a row without losing lives. Score multipler is now " + scoreMult);
-			transform.GetComponent<SoundEffects> ().playScoreMult ();
+			GameObject.Find("Sound Guy").GetComponent<SoundEffects>().playScoreMult ();
+
         }
 
         if (lives <= 0)
