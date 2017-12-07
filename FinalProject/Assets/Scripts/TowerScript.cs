@@ -8,6 +8,7 @@ public class TowerScript : MonoBehaviour {
 	public Transform TeleportPoint;
 	public float teleportFadeTime;
 
+
 	GameObject player { get { return GetComponent<GazeButton>().observer.gameObject; } }
 
 	private void Start()
@@ -34,7 +35,7 @@ public class TowerScript : MonoBehaviour {
 			{
 				SteamVR_Fade.Start(Color.black, 0);
 				SteamVR_Fade.Start(Color.clear, teleportFadeTime);
-				transform.root.GetComponent<SoundEffects> ().playSound ();
+				GameObject.Find("Sound Guy").GetComponent<SoundEffects>().playTeleport ();
 				player.transform.root.position = TeleportPoint.transform.position;
 			}
 		}

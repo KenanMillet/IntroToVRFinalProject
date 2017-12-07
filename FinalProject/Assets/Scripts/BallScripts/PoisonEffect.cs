@@ -22,7 +22,7 @@ public class PoisonEffect : MonoBehaviour
 
 	void OnTriggerStay(Collider coll)
     {
-		Debug.Log(coll.name + " entered the cold AoE.");
+//		Debug.Log(coll.name + " entered the cold AoE.");
         EnemyAI enem = coll.GetComponent<EnemyAI>();
         if (enem) {
 			enem.damage(damagePerSecond * Time.deltaTime);
