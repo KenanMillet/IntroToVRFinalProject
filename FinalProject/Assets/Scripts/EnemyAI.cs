@@ -146,6 +146,7 @@ public class EnemyAI : MonoBehaviour
 	public virtual void damage(Projectile p)
 	{
 		damage(p.damage);
+		GameObject.Find ("Sound Guy").GetComponent<SoundEffects> ().playEnemyHit ();
 	}
     
 	public virtual void damage(float d)

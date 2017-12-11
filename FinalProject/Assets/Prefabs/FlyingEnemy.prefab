@@ -233,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1707708653065554}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9085855, y: 5.9221845, z: 1.7666812}
+  m_LocalPosition: {x: -6.4988, y: 5.8721857, z: -0.684752}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4916517058711108}
@@ -261,7 +261,7 @@ Transform:
   m_GameObject: {fileID: 1042551978874954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4553038631611224}
   - {fileID: 4542425915813772}
@@ -683,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMaterial: {fileID: 2100000, guid: 64ecf97632a6d0744b02ba155073b9cf, type: 2}
+  font: {fileID: 12800000, guid: 16bbe915b0cc7d44b98813bd3d418f30, type: 3}
   nameOfObject: {fileID: 0}
   player: {fileID: 1776230317225650, guid: 2f85d59e98c0c2a409a02f70f36a025a, type: 2}
 --- !u!114 &114712460408742014
@@ -775,6 +776,7 @@ MonoBehaviour:
   spawnInterval: 2
   root: {fileID: 4568470756678760}
   hurtMaterial: {fileID: 2100000, guid: 60ffece5efa62ec4685174601bad545e, type: 2}
+  baseProjectile: {fileID: 11400000, guid: b592951d129d5084ea7aae92c5433832, type: 2}
 --- !u!135 &135710765992295786
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -785,7 +787,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.5
   m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!222 &222129827203730804
 CanvasRenderer:
