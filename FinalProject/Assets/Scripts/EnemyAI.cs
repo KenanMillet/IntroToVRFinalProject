@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+
     public float originSpeed;
 	// [HideInInspector]
 	public float Speed;
@@ -179,19 +180,23 @@ public class EnemyAI : MonoBehaviour
 	{
         if (reachedEnd)
         {
-            Debug.Log(transform.parent.name + " reached the end");
+			GameObject.Find("Sound Guy").GetComponent<SoundEffects>().playLoseLife ();
+
+            //Debug.Log(transform.parent.name + " reached the end");
             GameManager.lives -= (int)_health;
             GameManager.consecutiveKills = 0;
-            Debug.Log("Lives remaining: " + GameManager.lives);
-			transform.root.GetComponent<SoundEffects> ().playLoseLife ();
+            //Debug.Log("Lives remaining: " + GameManager.lives);
+
         }
         else
         {
-            Debug.Log(transform.parent.name + " was killed");
+			GameObject.Find("Sound Guy").GetComponent<SoundEffects>().playEnemyDeath ();
+
+            //Debug.Log(transform.parent.name + " was killed");
             GameManager.score += (int)(this.MaxHealth * 10 * GameManager.scoreMult);
             GameManager.consecutiveKills++;
             Debug.Log("Score is now: " + GameManager.score);
-			transform.root.GetComponent<SoundEffects> ().playSound();
+
         }
 		Destroy(root.gameObject); //TODO: Replace with a real death animation and such
 	}

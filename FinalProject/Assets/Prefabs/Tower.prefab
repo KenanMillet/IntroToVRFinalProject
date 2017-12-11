@@ -1352,6 +1352,7 @@ MonoBehaviour:
   red: {fileID: 2100000, guid: f122ebda54d5a954d86c01372f509090, type: 2}
   TeleportPoint: {fileID: 4455900270569166}
   teleportFadeTime: 0.1
+  teleportClip: {fileID: 8300000, guid: 65c9a4b53bec69d488dbe63ea3652bb9, type: 3}
 --- !u!136 &136606500759712752
 CapsuleCollider:
   m_ObjectHideFlags: 1
