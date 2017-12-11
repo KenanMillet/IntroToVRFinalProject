@@ -6,23 +6,36 @@ public class SoundEffects : MonoBehaviour {
 	
 	AudioSource audio;
 
-	void Awake(){
-		audio = GetComponent<AudioSource>();
-	}
-
-	public void playSound(){
-		audio.Play ();
-	}
-
 	public AudioClip loseLife;
 	public AudioClip scoreMultiplier;
+	public AudioClip death;
+	public AudioClip teleport;
 
-	public void playLoseLife(){
+	void Awake(){
+		audio = GetComponent<AudioSource>();
+
+		DontDestroyOnLoad(this);
+	}
+
+
+
+
+	public void playLoseLife( ){
+		Debug.Log ("Lost Life");
 		audio.PlayOneShot (loseLife);
 	}
 
-	public void playScoreMult(){
+	public void playScoreMult( ){
 		audio.PlayOneShot (scoreMultiplier);
+	}
+
+	public void playEnemyDeath( ){
+		audio.PlayOneShot (death);
+	}
+
+	public void playTeleport( ){
+		Debug.Log ("teleport");
+		audio.PlayOneShot (teleport);
 	}
 		
 }
