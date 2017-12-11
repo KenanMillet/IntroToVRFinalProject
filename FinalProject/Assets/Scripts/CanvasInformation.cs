@@ -5,6 +5,8 @@ public class CanvasInformation : MonoBehaviour
 {
 	public Material textMaterial;
 
+	public Font font;
+
 	public bool lookedAtBefore { get; set; }
 
 	public Text nameOfObject;
@@ -20,6 +22,11 @@ public class CanvasInformation : MonoBehaviour
 	{
 		player = GameObject.Find("PlayerPrefab");
 		lookedAtBefore = false;
+	}
+
+	private void Update()
+	{
+		if(GetComponentInParent<EnemyAI>() == null) doABunchOfUpdating();
 	}
 
 	void updateData()
@@ -86,8 +93,7 @@ public class CanvasInformation : MonoBehaviour
 		toAdd.transform.localRotation = new Quaternion();
 		toAdd.transform.localScale = new Vector3(1f, 1f, 1f);
 		Text theText = toAdd.AddComponent<Text>();
-		Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
-		theText.font = ArialFont;
+		theText.font = font;
 		theText.fontSize = 100;
 		theText.alignment = TextAnchor.MiddleCenter;
 		theText.verticalOverflow = VerticalWrapMode.Overflow;
