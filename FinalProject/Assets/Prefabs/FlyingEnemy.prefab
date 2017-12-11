@@ -776,7 +776,7 @@ MonoBehaviour:
   spawnInterval: 2
   root: {fileID: 4568470756678760}
   hurtMaterial: {fileID: 2100000, guid: 60ffece5efa62ec4685174601bad545e, type: 2}
-  baseProjectile: {fileID: 0}
+  baseProjectile: {fileID: 11400000, guid: b592951d129d5084ea7aae92c5433832, type: 2}
 --- !u!135 &135710765992295786
 SphereCollider:
   m_ObjectHideFlags: 1
