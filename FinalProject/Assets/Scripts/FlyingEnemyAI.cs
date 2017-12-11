@@ -2,8 +2,9 @@
 
 public class FlyingEnemyAI : EnemyAI
 {
+	public ProjectileType baseProjectile;
 	public override void damage(float d)
 	{
-		base.damage(d * MaxHealth);
+		base.damage(d/baseProjectile.damage * MaxHealth/4.0f);
 	}
 }
