@@ -186,6 +186,7 @@ public class EnemyAI : MonoBehaviour
             //Debug.Log(transform.parent.name + " reached the end");
             GameManager.lives -= (int)_health;
             GameManager.consecutiveKills = 0;
+            GameManager.scoreMult = 1;
             //Debug.Log("Lives remaining: " + GameManager.lives);
 
         }
