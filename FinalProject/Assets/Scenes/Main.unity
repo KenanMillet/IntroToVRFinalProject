@@ -8309,6 +8309,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114716709079081296, guid: ae6ba04be01f93a45a6bf42e6a3ffa8f,
+        type: 2}
+      propertyPath: enemyHits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4646192311243122, guid: ae6ba04be01f93a45a6bf42e6a3ffa8f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8341,6 +8346,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114716709079081296, guid: ae6ba04be01f93a45a6bf42e6a3ffa8f,
+        type: 2}
+      propertyPath: enemyHit
+      value: 
+      objectReference: {fileID: 8300000, guid: ee2ee6f52d7ad6d41935330b39e79e92, type: 3}
+    - target: {fileID: 114716709079081296, guid: ae6ba04be01f93a45a6bf42e6a3ffa8f,
+        type: 2}
+      propertyPath: enemyHits.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ee2ee6f52d7ad6d41935330b39e79e92, type: 3}
+    - target: {fileID: 114716709079081296, guid: ae6ba04be01f93a45a6bf42e6a3ffa8f,
+        type: 2}
+      propertyPath: enemyHits.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f1de3233783371d4d83651add968567c, type: 3}
+    - target: {fileID: 114716709079081296, guid: ae6ba04be01f93a45a6bf42e6a3ffa8f,
+        type: 2}
+      propertyPath: enemyHits.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d7211cde23bf81e4a9520f8d9ee7d95f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae6ba04be01f93a45a6bf42e6a3ffa8f, type: 2}
   m_IsPrefabParent: 0
