@@ -794,25 +794,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 82514298235512952, guid: 6f6e6d9e56ce68a40b32fffae656ecd1,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114501514293828836, guid: 6f6e6d9e56ce68a40b32fffae656ecd1,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1917001070524352, guid: 6f6e6d9e56ce68a40b32fffae656ecd1, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114501514293828836, guid: 6f6e6d9e56ce68a40b32fffae656ecd1,
-        type: 2}
-      propertyPath: multiplerClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 989f22d144c794a44a7a7f227b37b9f5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f6e6d9e56ce68a40b32fffae656ecd1, type: 2}
   m_IsPrefabParent: 0
