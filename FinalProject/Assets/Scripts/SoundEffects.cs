@@ -10,6 +10,9 @@ public class SoundEffects : MonoBehaviour {
 	public AudioClip scoreMultiplier;
 	public AudioClip death;
 	public AudioClip teleport;
+	public AudioClip enemyHit;
+
+    public AudioClip[] enemyHits;
 
 	void Awake(){
 		audio = GetComponent<AudioSource>();
@@ -36,6 +39,11 @@ public class SoundEffects : MonoBehaviour {
 	public void playTeleport( ){
 		Debug.Log ("teleport");
 		audio.PlayOneShot (teleport);
+	}
+
+	public void playEnemyHit(){
+        AudioClip noise = enemyHits[Random.Range(0, enemyHits.Length)];
+		audio.PlayOneShot (noise);
 	}
 		
 }

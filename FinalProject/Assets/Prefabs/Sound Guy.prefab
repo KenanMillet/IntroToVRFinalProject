@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseLife: {fileID: 8300000, guid: 9084b8123f61bca46a63ab981b752ecc, type: 3}
-  scoreMultiplier: {fileID: 8300000, guid: be3c0c32c54c76747923f3b2855ecc77, type: 3}
+  scoreMultiplier: {fileID: 8300000, guid: 1b9df2593dea0f34aad46a96fb3fd105, type: 3}
   death: {fileID: 8300000, guid: 16d8419d9a6222f4c8e51d1e2ebd1b5d, type: 3}
   teleport: {fileID: 8300000, guid: 65c9a4b53bec69d488dbe63ea3652bb9, type: 3}
+  enemyHit: {fileID: 8300000, guid: 99818315bec5eac43a3af2754dc9729d, type: 3}
