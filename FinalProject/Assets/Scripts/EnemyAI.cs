@@ -146,6 +146,7 @@ public class EnemyAI : MonoBehaviour
 	public virtual void damage(Projectile p)
 	{
 		damage(p.damage);
+		GameObject.Find ("Sound Guy").GetComponent<SoundEffects> ().playEnemyHit ();
 	}
     
 	public virtual void damage(float d)
@@ -185,6 +186,7 @@ public class EnemyAI : MonoBehaviour
             //Debug.Log(transform.parent.name + " reached the end");
             GameManager.lives -= (int)_health;
             GameManager.consecutiveKills = 0;
+            GameManager.scoreMult = 1;
             //Debug.Log("Lives remaining: " + GameManager.lives);
 
         }

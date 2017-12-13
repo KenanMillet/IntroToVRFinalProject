@@ -283,7 +283,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4cd64bb5414d7d44d82826bfe4f4adba, type: 2}
+  - {fileID: 2100000, guid: 82ad4c9ee43b58549ac4d1fa154e9527, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -315,7 +315,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4cd64bb5414d7d44d82826bfe4f4adba, type: 2}
+  - {fileID: 2100000, guid: 82ad4c9ee43b58549ac4d1fa154e9527, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -347,8 +347,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4cd64bb5414d7d44d82826bfe4f4adba, type: 2}
-  - {fileID: 2100000, guid: fb98345886d08ae4fb2164daa349e8bc, type: 2}
+  - {fileID: 2100000, guid: 82ad4c9ee43b58549ac4d1fa154e9527, type: 2}
+  - {fileID: 2100000, guid: e2b880f6849275b4392e807d22272a6c, type: 2}
   - {fileID: 2100000, guid: e2b880f6849275b4392e807d22272a6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -415,7 +415,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5bfa33f159abcbd478ee5a35f12fd01d, type: 2}
+  - {fileID: 2100000, guid: e2b880f6849275b4392e807d22272a6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -447,7 +447,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5bfa33f159abcbd478ee5a35f12fd01d, type: 2}
+  - {fileID: 2100000, guid: e2b880f6849275b4392e807d22272a6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -776,7 +776,7 @@ MonoBehaviour:
   spawnInterval: 2
   root: {fileID: 4568470756678760}
   hurtMaterial: {fileID: 2100000, guid: 60ffece5efa62ec4685174601bad545e, type: 2}
-  baseProjectile: {fileID: 0}
+  baseProjectile: {fileID: 11400000, guid: b592951d129d5084ea7aae92c5433832, type: 2}
 --- !u!135 &135710765992295786
 SphereCollider:
   m_ObjectHideFlags: 1
