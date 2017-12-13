@@ -53,7 +53,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dd841f715f899b94f8172913785d4f8c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9dc81a61c644534ba854e00d7acb335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ll: {fileID: 0}
-  sM: {fileID: 0}
-  d: {fileID: 0}
-  t: {fileID: 0}
+  loseLife: {fileID: 0}
+  scoreMultiplier: {fileID: 0}
+  death: {fileID: 0}
+  teleport: {fileID: 0}
 --- !u!114 &114501514293828836
 MonoBehaviour:
   m_ObjectHideFlags: 1

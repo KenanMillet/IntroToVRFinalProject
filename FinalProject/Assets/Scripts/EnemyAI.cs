@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-
+	[HideInInspector]
+	public event Action onDeath;
     public float originSpeed;
 	// [HideInInspector]
 	public float Speed;
@@ -179,6 +181,7 @@ public class EnemyAI : MonoBehaviour
     
 	protected virtual void die()
 	{
+		if(onDeath != null) onDeath.Invoke();
         if (reachedEnd)
         {
 			GameObject.Find("Sound Guy").GetComponent<SoundEffects>().playLoseLife ();
