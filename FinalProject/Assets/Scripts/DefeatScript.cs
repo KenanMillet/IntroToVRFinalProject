@@ -13,7 +13,7 @@ public class DefeatScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        defeatText.text = "Super Space\nTower Defense\n\nHigh Score: " + GameManager.highScore + "\nScore: " + GameManager.score;
+        defeatText.text = "Space Raid\n\nHigh Score: " + GameManager.highScore + "\nScore: " + GameManager.score;
 
     }
 }
